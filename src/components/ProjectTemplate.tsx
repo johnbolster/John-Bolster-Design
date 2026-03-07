@@ -84,7 +84,7 @@ export default function ProjectTemplate() {
           </div>
 
           {/* Image Gallery - Template Layout */}
-          <div className="space-y-8 md:space-y-16">
+          <div className="space-y-4 md:space-y-16">
             {/* Hero Image */}
             <div className="w-full aspect-video overflow-hidden rounded-lg bg-zinc-100">
               <img 
@@ -96,7 +96,7 @@ export default function ProjectTemplate() {
             </div>
 
             {/* Additional Images */}
-            <div className="grid grid-cols-1 gap-8">
+            <div className="grid grid-cols-1 gap-4 md:gap-8">
               {project.images.map((img, index) => (
                 <div key={index} className="w-full overflow-hidden rounded-lg bg-zinc-100 aspect-auto">
                   <img 

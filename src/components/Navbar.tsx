@@ -14,28 +14,8 @@ export default function Navbar() {
         john <br />
         <span className="text-zinc-400">+</span> bolster
       </Link>
-
-      <div className="hidden md:flex gap-8">
-        <NavLink href="/#work">Work</NavLink>
-        <NavLink href="/#about">About</NavLink>
-        <NavLink href="/#contact">Contact</NavLink>
-      </div>
-
-      <button className="md:hidden p-2">
-        <div className="w-8 h-0.5 bg-current mb-1.5"></div>
-        <div className="w-8 h-0.5 bg-current"></div>
-      </button>
     </motion.nav>
   );
 }
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link 
-      to={href} 
-      className="text-sm font-medium uppercase tracking-widest hover:text-zinc-400 transition-colors"
-    >
-      {children}
-    </Link>
-  );
-}
+
