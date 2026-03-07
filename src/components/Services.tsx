@@ -46,7 +46,7 @@ export default function Services() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
         
         {/* Left Column: Title & Image */}
-        <div className="sticky top-24 h-fit">
+        <div className="md:sticky md:top-24 h-fit">
           <h2 className="font-heading text-4xl font-bold uppercase tracking-tighter mb-8">What I Do</h2>
           <div className="w-full max-w-sm aspect-[3/4] overflow-hidden rounded-lg bg-zinc-800">
             <img 
