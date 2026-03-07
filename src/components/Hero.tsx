@@ -47,7 +47,7 @@ export default function Hero() {
           <StatBlock label="Projects" value="More than 250" />
           <StatBlock label="Awards" value="46" />
           
-          <div className="flex flex-col justify-between items-start h-full min-h-[120px]">
+          <div className="flex flex-col justify-start gap-4 items-start h-full">
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-400">Connect</span>
             <div className="flex flex-col gap-1">
                <a href="https://www.instagram.com/johnbolster.design/" target="_blank" rel="noopener noreferrer" className="font-heading text-xl font-bold hover:text-zinc-400 transition-colors">Instagram</a>
@@ -62,9 +62,9 @@ export default function Hero() {
 
 function StatBlock({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex flex-col justify-between items-start h-full min-h-[120px]">
+    <div className="flex flex-col justify-start gap-4 items-start h-full">
       <span className="text-xs font-medium uppercase tracking-widest text-zinc-400">{label}</span>
-      <span className="font-heading text-3xl md:text-4xl font-bold tracking-tight">{value}</span>
+      <span className="font-heading text-xl md:text-4xl font-bold tracking-tight">{value}</span>
     </div>
   );
 }

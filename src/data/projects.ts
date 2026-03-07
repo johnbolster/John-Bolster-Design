@@ -44,7 +44,7 @@ export const projects: Project[] = [
     image: "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741871/6_jg6jua.jpg",
     description: "King Brothers Dairy is a family-owned farm with a rich heritage of producing high-quality dairy products. We refreshed their brand identity to honor their legacy while appealing to modern consumers. The new design system emphasizes freshness, tradition, and the farm-to-table connection, using a classic color palette and typography that evokes a sense of nostalgia and trust.",
     client: "King Brothers Dairy",
-    services: ["Brand Refresh", "Packaging Design", "Web Design"],
+    services: ["Brand Strategy", "Brand Identity", "Environmental Design"],
     images: [
       "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741870/4_pb4mnm.jpg",
       "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741867/11_xpaay2.jpg",
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     image: "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744368/1-50_g3xpzk.jpg",
     description: "Magnus Medical's SAINT™ technology is a breakthrough in neuromodulation for treatment-resistant depression, but its identity didn't match its innovation. We built a science-forward brand balancing clinical precision with compassion: structured layouts, data-driven visuals, wave-like imagery, and a tone anchored by Hero and Caregiver archetypes. The result is a cohesive system that speaks to both clinicians and patients, communicating SAINT™'s transformative promise of up to 90% remission in just 2.6 days with clarity, credibility, and hope.",
     client: "SAINT",
-    services: ["Logo Design", "Apparel Graphics"],
+    services: ["Brand Identity"],
     images: [
       "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744369/2-50_siij15.jpg",
       "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744378/3-50_icjqbq.jpg",
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     image: "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746485/1_afgcuj.png",
     description: "Natroba needed to change prescriber behavior in a category dominated by over-the-counter habit, despite OTC treatments carrying a 98.3% resistance rate. The brand needed clinical credibility, urgency, and a clear alternative narrative to move providers toward a prescription-first mindset. We built a bold, data-driven campaign anchored in two imperatives: Rethink and Resolve. A high-contrast visual system paired macro lice imagery with stark typography and a confident color palette to command attention in clinical settings. Messaging led with resistance science and efficacy data to reframe the conversation around treatment failure. The result was a cohesive campaign across print, digital, and presentation formats that gave providers a compelling reason to act, positioning Natroba as the evidence-based answer to a pervasive and underestimated problem.",
     client: "Natroba™",
-    services: ["Campaign Design", "Social Media Graphics"],
+    services: ["Brand Identity Update"],
     images: [
       "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746481/2_uusram.jpg",
       "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746494/3_eha3yn.jpg",
@@ -133,7 +133,7 @@ export const projects: Project[] = [
     image: "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772818230/1_ajppmc.jpg",
     description: "This billion-dollar athletic retailer had more than 700 stores and thousands of employees. To support ongoing hiring needs, the company needed to inspire and attract the best candidates from among a diverse 20-something demographic—men and women from all over the United States seeking fulfilling careers with a socially responsible employer. The resulting brand book were displayed and distributed on-site and at job fairs.",
     client: "Finishline",
-    services: ["Brand Strategy", "Visual Identity"],
+    services: ["Creative Direction", "Art Direction"],
     images: [
       "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772818232/3_lxi3wv.jpg",
       "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772818227/5_yscwdj.jpg",
