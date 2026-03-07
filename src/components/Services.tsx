@@ -45,16 +45,17 @@ export default function Services() {
     <section className="px-6 md:px-12 py-24 bg-zinc-900 text-white">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
         
-        {/* Left Column: Title & CV */}
+        {/* Left Column: Title & Image */}
         <div className="sticky top-24 h-fit">
           <h2 className="font-heading text-4xl font-bold uppercase tracking-tighter mb-8">What I Do</h2>
-          <a 
-            href="#" 
-            className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-widest hover:text-zinc-400 transition-colors"
-          >
-            Download CV
-            <ArrowDown className="w-4 h-4" />
-          </a>
+          <div className="w-full max-w-sm aspect-[3/4] overflow-hidden rounded-lg bg-zinc-800">
+            <img 
+              src="https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772894794/john-bolster_dl0ab8.jpg" 
+              alt="John Bolster" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
         </div>
 
         {/* Right Column: List */}

@@ -45,7 +45,7 @@ export default function Hero() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/20 pt-8 text-white">
           <StatBlock label="Experience" value="Since 2002" />
           <StatBlock label="Projects" value="More than 250" />
-          <StatBlock label="Awards" value="46" />
+          <StatBlock label="Awards" value="23" />
           
           <div className="flex flex-col justify-start gap-4 items-start h-full">
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-400">Connect</span>

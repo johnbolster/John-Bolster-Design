@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import Marquee from "./Marquee";
+import ObfuscatedEmail from "./ObfuscatedEmail";
 
 export default function Footer() {
   return (
@@ -13,9 +14,11 @@ export default function Footer() {
         {/* Column 1: Say Hello */}
         <div>
           <h3 className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-6">Say "Hello":</h3>
-          <a href="mailto:jsb@johnbolster.design" className="font-heading text-xl font-bold hover:text-zinc-500 transition-colors">
-            jsb@johnbolster.design
-          </a>
+          <ObfuscatedEmail 
+            user="jsb" 
+            domain="johnbolster.design" 
+            className="font-heading text-xl font-bold hover:text-zinc-500 transition-colors" 
+          />
         </div>
 
         {/* Column 2: Connect */}
