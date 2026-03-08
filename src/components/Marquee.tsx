@@ -13,16 +13,16 @@ export default function Marquee({ text }: { text: string }) {
           duration: 20,
         }}
       >
-        <span className="font-heading text-8xl font-bold uppercase tracking-tighter text-zinc-300 mr-12">
+        <span className="font-heading text-4xl md:text-8xl font-bold uppercase tracking-tighter text-zinc-300 mr-12">
           {text}
         </span>
-        <span className="font-heading text-8xl font-bold uppercase tracking-tighter text-zinc-300 mr-12">
+        <span className="font-heading text-4xl md:text-8xl font-bold uppercase tracking-tighter text-zinc-300 mr-12">
           {text}
         </span>
-        <span className="font-heading text-8xl font-bold uppercase tracking-tighter text-zinc-300 mr-12">
+        <span className="font-heading text-4xl md:text-8xl font-bold uppercase tracking-tighter text-zinc-300 mr-12">
           {text}
         </span>
-        <span className="font-heading text-8xl font-bold uppercase tracking-tighter text-zinc-300 mr-12">
+        <span className="font-heading text-4xl md:text-8xl font-bold uppercase tracking-tighter text-zinc-300 mr-12">
           {text}
         </span>
       </motion.div>

@@ -9,8 +9,7 @@ const services = [
       "Positioning & Differentiation",
       "Brand Purpose & Values Discovery",
       "Audience Definition & Persona Mapping",
-      "Brand Archetype Alignment",
-      "Competitive Analysis & Landscape Mapping"
+      "Brand Archetype Alignment"
     ]
   },
   {
