@@ -59,7 +59,7 @@ export default function ProjectPage() {
             {/* Description */}
             <div className="md:col-span-8">
               <h3 className="font-heading text-xl font-bold uppercase tracking-tight mb-4">About the project</h3>
-              <p className="text-lg md:text-xl leading-relaxed text-zinc-600 max-w-3xl">
+              <p className="text-lg md:text-xl leading-relaxed text-zinc-600 max-w-3xl whitespace-pre-wrap">
                 {project.description}
               </p>
             </div>

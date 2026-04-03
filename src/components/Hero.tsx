@@ -37,8 +37,11 @@ export default function Hero() {
           John <br />
           Bolster
         </h1>
-        <p className="font-heading text-2xl md:text-3xl font-bold text-zinc-400 mb-12 uppercase tracking-tight">
-          Brand Strategist & Identity Designer
+        <p className="font-heading text-2xl md:text-3xl font-bold text-zinc-400 mb-6 uppercase tracking-tight">
+          Brand strategy before design. Always.
+        </p>
+        <p className="text-lg md:text-xl text-zinc-300 max-w-2xl mb-12 leading-relaxed">
+          I help companies define who they are, design their identity, and build brand systems rooted in clarity, not assumption.
         </p>
 
         {/* Stats Grid */}
