@@ -42,7 +42,7 @@ export const projects: Project[] = [
     category: "Brand Strategy and Design",
     year: "2017",
     image: "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741871/6_jg6jua.jpg",
-    description: "King Brothers Dairy had the product, the history, and the local trust. What they didn’t have was a brand people would remember. The category is predictable. “Fresh.” “Local.” “Family-owned.” Every dairy says the same thing and looks almost identical doing it.\n\nSo the opportunity wasn’t to modernize. It was to differentiate.\nWe leaned into a more unexpected position—one built on personality, not just heritage. A brand that still respected tradition, but didn’t take itself too seriously.\n\nThe idea became simple: Drink like a King.\nFrom there, the system came to life.\n\nA crown as a unifying symbol across packaging and environment.\nA playful, bold visual language that could flex from signage to pattern to merchandise. A tone that felt confident, approachable, and just irreverent enough to stand out in a category that rarely does.\n\nThe result is a brand that still feels rooted in the farm, but shows up in a way people actually notice, remember, and talk about.",
+    description: "King Brothers Dairy had everything most brands rely on: strong product, deep history, and local trust. What they lacked was memorability. In a category defined by sameness, where every competitor leans on “fresh,” “local,” and “family-owned,” the brand was getting lost despite doing everything right.\n\nThis was not about modernizing the look. It was about creating distinction. Instead of doubling down on heritage in the expected way, we built a brand around personality. Something that still respected its roots, but showed up with confidence and a clear point of view.\n\nThe idea was simple: Drink like a King. From there, the system came to life. A crown became the unifying symbol across packaging, environment, and merchandise, supported by a bold, flexible visual language that could scale across touchpoints.\n\nThe result is a brand that still feels grounded in the farm, but now shows up in a way people notice, remember, and talk about.",
     client: "King Brothers Dairy",
     services: ["Brand Strategy", "Brand Identity", "Environmental Design"],
     images: [
@@ -62,11 +62,12 @@ export const projects: Project[] = [
     title: "DLG",
     category: "Brand Strategy and Design",
     year: "2018",
-    image: "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772742866/1_g1vd9h.jpg",
+    image: "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1775302294/DLG_MG_5557-Edit-print_eipjl6.jpg",
     description: "DLG had evolved into a national force in high-stakes litigation, but their identity hadn’t caught up. They needed a brand that reflected both their scale and their stance: advocacy rooted in conviction, not just expertise.\n\nWe built a bold, editorially-driven identity centered on narrative and truth. The system strips away excess. Stark black-and-white visuals, precise typography, and a deliberate absence of color based on a simple idea: when everything is gray, clarity gets lost.\n\nAt the center is DNA, a hardcover brand book designed as a manifesto, not a marketing piece. It articulates who they are, what they stand for, and the standard they hold themselves to both internally and externally.\n\nThe result is more than a visual identity. It’s a unifying framework that aligns the team, sharpens perception, and positions DLG as not just litigators, but principled advocates shaping outcomes that matter.",
     client: "DLG",
     services: ["Rebranding", "Print Design", "Digital Assets"],
     images: [
+      "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772742866/1_g1vd9h.jpg",
       "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772742867/2_xhtwke.jpg",
       "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772742868/4_qzpvn0.jpg",
       "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772742869/5_ajfwz4.png",
