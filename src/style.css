@@ -143,6 +143,9 @@ a{color:inherit}
 .ms-stack .rocket{width:134px;margin-left:-17px;transform-origin:50% 55%;transform:translate3d(calc(var(--dp,0) * var(--dp,0) * 100vmax),calc(var(--dp,0) * var(--dp,0) * -111vmax),0) scale(calc(1 + var(--dp,0) * .45))}
 .think{width:84px;flex:none;color:var(--ink)}
 .crt{width:84px;flex:none;color:var(--ink)}
+.tools{width:min(210px,58vw);flex:none;color:var(--ink);overflow:visible;margin:2px 0 6px}
+.tools .sw-c{transform:rotate(calc(var(--a) * (.25 + var(--fp,1) * .75)));transition:transform .2s linear}
+.tools .knife{transform-box:fill-box}
 .rocket .flame{transform-box:fill-box;transform-origin:50% 0;animation:flick .18s ease-in-out infinite alternate}
 @keyframes flick{from{transform:scale(.9,.82)}to{transform:scale(1.05,1.08)}}
 @media (prefers-reduced-motion:reduce){.rocket .flame{animation:none}}
