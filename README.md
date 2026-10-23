@@ -1,20 +1,15 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# johnbolster.design
 
-# Run and deploy your AI Studio app
+Portfolio site for John Bolster. A single page "camera on a line" experience built with plain HTML, CSS and JavaScript, bundled by Vite and hosted on Vercel.
 
-This contains everything you need to run your app locally.
+- `index.html`: page markup
+- `src/style.css`: styles
+- `src/main.js`: the 3D scroll engine and interactions
+- `src/data.js`: copy, services and projects (project images load from Cloudinary)
+- `public/`: fonts, pose frames, halftone images and the Distinkt teaser
 
-View your app in AI Studio: https://ai.studio/apps/b4733c74-8ab8-49d8-9c15-dffa244dc824
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```
+npm install
+npm run dev     # local preview on port 3000
+npm run build   # production build into dist/
+```
