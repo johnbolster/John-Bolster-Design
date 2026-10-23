@@ -13,6 +13,8 @@
 }
 *{box-sizing:border-box}
 html{background:var(--bg)}
+html{scrollbar-width:none;-ms-overflow-style:none}
+html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;padding-left:var(--gut);padding-right:var(--gutR)}
 img{max-width:100%;display:block}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
@@ -326,7 +328,7 @@ a{color:inherit}
   .pv-r{order:1;margin:10px 0 14px calc(-1 * max(20px,env(safe-area-inset-left,0px)))}
   .pv-l > :last-child{margin-bottom:28px}
   #hud .lb,#hud .tk{display:none}
-  #hud{right:6px}
+  #hud{right:14px}
   .ct-row{flex-direction:column;gap:12px}
   .pv-next .d{font-size:7vw}
 }
