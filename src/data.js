@@ -84,7 +84,7 @@ export const JB = {
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772739165/Asset_12-50_fjwhdp.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772739165/Asset_16_e1faeu.png"
    ],
-   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772739165/A180-1-50_uhu3j4.jpg",
+   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772739166/A180-8-50_tpsviw.jpg",
    "summary": "A peer-to-peer brand for veterans and first responders, built on the idea of doing a 180.",
    "discipline": "Identity"
   },
@@ -111,7 +111,7 @@ export const JB = {
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741858/8_mip4nd.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741855/9_g9l3y9.png"
    ],
-   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741862/17_aokwzd.jpg",
+   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741866/19_bkwn2o.jpg",
    "summary": "A farm brand with a crown and a point of view. Drink like a King.",
    "discipline": "Identity"
   },
@@ -194,7 +194,7 @@ export const JB = {
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746489/9_fqcije.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746480/10_fraqua.png"
    ],
-   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746485/1_afgcuj.png",
+   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746481/2_uusram.jpg",
    "summary": "Rethink and Resolve: a prescriber campaign built on resistance data.",
    "discipline": "Campaign"
   },
