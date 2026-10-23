@@ -211,9 +211,14 @@ function pair(s){ var a=(s||"0,0").split(","); return [num(a[0],0),num(a[1],0)] 
 function clamp(v,a,b){ return v<a?a:v>b?b:v }
 function sm(t){ t=clamp(t,0,1); return t*t*t*(t*(t*6-15)+10) }
 
+var lastLayoutW=0, hProbe=null;
+function stableH(){
+  if(!hProbe){ hProbe=D.createElement("div"); hProbe.style.cssText="position:fixed;left:0;top:0;width:1px;height:100vh;height:100lvh;visibility:hidden;pointer-events:none"; D.body.appendChild(hProbe) }
+  return Math.max(innerHeight, hProbe.offsetHeight||0);
+}
 function layout(){
   var prog = total? clamp(scrollY/total,0,1) : 0;
-  W=innerWidth; H=innerHeight; mob = W<760;
+  W=innerWidth; H=stableH(); mob = W<760; lastLayoutW=W;
   F = mob ? 900 : clamp(W*0.8, 900, 1400);
   DPR=Math.min(devicePixelRatio||1,2);
   cv.width=W*DPR; cv.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
@@ -488,7 +493,13 @@ function frame(now){
   if(zc!==lastZc || sCam!==lastS || lead!==lastLead || dirty){ lastZc=zc; lastS=sCam; lastLead=lead; dirty=false; numbers(zc); drawLine(zc); place(zc); distinkt(sCam); hud(sCam); }
   requestAnimationFrame(frame);
 }
-var rt; addEventListener("resize",function(){ clearTimeout(rt); rt=setTimeout(function(){ layout(); dirty=true },150) });
+// Phones show and hide the address bar while scrolling, which fires resize events.
+// Laying everything out again mid scroll causes a stutter, so on touch screens we only
+// re-layout when the width changes (rotation), and size the stage to the tallest viewport.
+var coarse = matchMedia("(pointer: coarse)").matches;
+var rt; addEventListener("resize",function(){
+  if(coarse && innerWidth===lastLayoutW) return;
+  clearTimeout(rt); rt=setTimeout(function(){ layout(); dirty=true },150) });
 layout(); scrollTo(0,0); requestAnimationFrame(frame);
 // deep links from the old site, like /projects/dlg, open that project
 (function(){ var m=location.pathname.match(/^\/projects\/([^\/]+)/); if(!m) return;

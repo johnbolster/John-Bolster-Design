@@ -78,7 +78,7 @@ a{color:inherit}
 
 /* ---------- 3D mode ---------- */
 .is3d body{overflow-x:hidden}
-.is3d #cv{display:block;position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.is3d #cv{display:block;position:fixed;left:0;top:0;width:100%;height:100vh;height:100lvh;z-index:1;pointer-events:none}
 .is3d #spacer{display:block}
 .is3d .st{display:contents}
 .is3d .el{position:fixed;left:0;top:0;z-index:2;visibility:hidden;transform-origin:50% 50%;backface-visibility:hidden}
