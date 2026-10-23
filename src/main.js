@@ -115,10 +115,12 @@ burger.addEventListener("click",function(){ setMenu(!root.classList.contains("me
 /* ---------- project view ---------- */
 var proj=$("#proj"), pvx=$("#pvx"), cur=-1, lastCard=null;
 function setPath(i){ try{ history.replaceState(null,"", i<0 ? "/" : "/projects/"+P[i].slug) }catch(e){} }
-function renderProj(i){
+var PV_SIZES="(max-width:760px) 100vw, 58vw";
+function preload(i,n){ return Promise.all(P[i].images.slice(0,n||2).map(function(u){ var im=new Image(); im.sizes=PV_SIZES; im.srcset=srcset(u); im.src=cld(u,1600); return im.decode ? im.decode().catch(function(){}) : Promise.resolve() })) }
+function renderProj(i, quiet){
   var p=P[i], n=P[(i+1)%P.length];
   var paras=p.description.split("\n").filter(Boolean).map(function(t){return "<p>"+t+"</p>"}).join("");
-  var imgs=p.images.map(function(s,k){return '<figure><img src="'+cld(s,1600)+'" srcset="'+srcset(s)+'" sizes="(max-width:760px) 100vw, 58vw" alt="'+p.title+' image '+(k+1)+'"'+(k>1?' loading="lazy"':'')+' decoding="async"></figure>'}).join("");
+  var imgs=p.images.map(function(s,k){return '<figure><img src="'+cld(s,1600)+'" srcset="'+srcset(s)+'" sizes="'+PV_SIZES+'" alt="'+p.title+' image '+(k+1)+'"'+(k>1?' loading="lazy" decoding="async"':'')+'></figure>'}).join("");
   proj.innerHTML='<div class="pv"><div class="pv-l"><span class="mono">'+String(i+1).padStart(2,"0")+' / 06 · '+p.year+'</span><h2 class="d b9">'+p.title+'</h2>'+
   '<div><span class="mono">Overview</span><div style="margin-top:12px">'+paras+'</div></div>'+
   '<dl class="pv-dl"><dt>Client</dt><dd>'+p.client+'</dd><dt>Year</dt><dd>'+p.year+'</dd><dt>Services</dt><dd>'+p.services.join(", ")+'</dd></dl>'+
@@ -126,7 +128,8 @@ function renderProj(i){
   '<div class="pv-r">'+imgs+'</div></div>';
   proj.scrollTop=0;
   $("#pvn").addEventListener("click",function(){ swap((i+1)%P.length) });
-  if(proj.animate) $$(".pv-r figure, .pv-l > *",proj).forEach(function(e,k){ e.animate([{opacity:0,transform:"translateY(40px)"},{opacity:1,transform:"none"}],{duration:900,delay:120+k*60,easing:"cubic-bezier(.2,.8,.2,1)",fill:"backwards"}) });
+  setTimeout(function(){ preload((i+1)%P.length) },1200);
+  if(proj.animate && !quiet) $$(".pv-r figure, .pv-l > *",proj).forEach(function(e,k){ e.animate([{opacity:0,transform:"translateY(40px)"},{opacity:1,transform:"none"}],{duration:900,delay:120+k*60,easing:"cubic-bezier(.2,.8,.2,1)",fill:"backwards"}) });
 }
 function openProj(i, card){
   setPath(i);
@@ -142,7 +145,7 @@ var wipe=$("#wipe"), wpath=$("#wpath"), wtitle=$("#wtitle"), wnum=$("#wnum"), bu
 function swap(i){
   if(!wipe.animate||reduce){ cur=i; renderProj(i); return }
   if(busy) return; busy=true;
-  var p=P[i], k=0;
+  var p=P[i], k=0, ready=preload(i), t0w=Date.now();
   wnum.textContent="Next project · "+String(i+1).padStart(2,"0")+" / 06";
   wtitle.innerHTML=p.title.split("").map(function(ch){ return ch===" "?" ":'<span class="c">'+ch+'</span>' }).join("");
   wipe.style.visibility="visible";
@@ -150,15 +153,17 @@ function swap(i){
   if(wpath.getAnimations) wpath.getAnimations().forEach(function(a){ a.cancel() });
   if(wipe.getAnimations) wipe.getAnimations().forEach(function(a){ a.cancel() });
   var L=wpath.getTotalLength(); wpath.style.strokeDasharray=L; wpath.style.strokeDashoffset=L;
+  // the line holds hidden (fill both) until the black panel is up, then draws once
+  wpath.animate([{strokeDashoffset:L+"px"},{strokeDashoffset:"0px"}],{duration:1000,delay:650,easing:"cubic-bezier(.6,0,.2,1)",fill:"both"});
   wipe.animate([{clipPath:"inset(100% 0 0 0)"},{clipPath:"inset(0% 0 0 0)"}],{duration:650,easing:"cubic-bezier(.7,0,.2,1)",fill:"forwards"}).onfinish=function(){
     wipe.classList.add("on");
-    wpath.animate([{strokeDashoffset:L},{strokeDashoffset:0}],{duration:1000,easing:"cubic-bezier(.6,0,.2,1)",fill:"forwards"});
     $$(".c",wtitle).forEach(function(c,j){ c.animate([{transform:"translateY(110%) rotate(6deg)",opacity:0},{transform:"none",opacity:1}],{duration:750,delay:60+j*38,easing:"cubic-bezier(.2,.8,.2,1)",fill:"both"}) });
-    setTimeout(function(){
-      cur=i; setPath(i); renderProj(i);
+    setTimeout(function(){ Promise.race([ready, new Promise(function(r){ setTimeout(r,2500) })]).then(reveal) },1250);
+    function reveal(){
+      cur=i; setPath(i); renderProj(i, true);
       var a=wipe.animate([{clipPath:"inset(0 0 0% 0)"},{clipPath:"inset(0 0 100% 0)"}],{duration:750,easing:"cubic-bezier(.7,0,.2,1)",fill:"forwards"});
       a.onfinish=function(){ wipe.style.visibility="hidden"; wipe.classList.remove("on"); busy=false };
-    },1250);
+    }
   };
 }
 function closeProj(fromKey){
