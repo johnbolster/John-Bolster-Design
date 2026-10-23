@@ -111,7 +111,7 @@ export const JB = {
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741858/8_mip4nd.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741855/9_g9l3y9.png"
    ],
-   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741871/6_jg6jua.jpg",
+   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741862/17_aokwzd.jpg",
    "summary": "A farm brand with a crown and a point of view. Drink like a King.",
    "discipline": "Identity"
   },
