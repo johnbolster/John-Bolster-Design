@@ -32,11 +32,11 @@ $(".svc-st").insertAdjacentHTML("beforeend", S.map(function(g,j){ var p=SP[j];
 // work: play with scale, alternate sides and sizes
 var WL = [
   {x:-0.22,y:-0.02,w:"clamp(260px,30vw,560px)",ar:"4/3",ax:0.05,ay:0.3},
-  {x:0.24,y:0.05,w:"clamp(200px,19vw,360px)",ar:"4/5",ax:-0.02,ay:-0.3},
+  {x:0.21,y:0.05,w:"clamp(260px,30vw,560px)",ar:"4/3",ax:-0.02,ay:-0.3},
   {x:-0.18,y:0.0,w:"clamp(280px,34vw,640px)",ar:"16/9",ax:0.26,ay:0.34},
-  {x:0.26,y:-0.04,w:"clamp(190px,18vw,330px)",ar:"1/1",ax:0.0,ay:0.32},
+  {x:0.19,y:-0.04,w:"clamp(280px,34vw,640px)",ar:"16/9",ax:0.0,ay:0.32},
   {x:-0.24,y:0.03,w:"clamp(230px,25vw,460px)",ar:"3/2",ax:0.04,ay:-0.3},
-  {x:0.2,y:0.0,w:"clamp(240px,27vw,500px)",ar:"4/3",ax:-0.12,ay:0.36}
+  {x:0.23,y:0.0,w:"clamp(230px,25vw,460px)",ar:"3/2",ax:-0.12,ay:0.36}
 ];
 var order = ["king-brothers-dairy","alliance-180","dlg","natroba","saint","finishline"];
 var P = order.map(function(s){return JB.projects.filter(function(p){return p.slug===s})[0]});
