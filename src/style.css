@@ -282,7 +282,7 @@ a{color:inherit}
 .ct-foot a:hover{color:var(--ink)}
 
 /* project view */
-#proj{position:fixed;inset:0;z-index:45;background:var(--bg);overflow:auto;overscroll-behavior:contain;clip-path:inset(50% 50% 50% 50%);visibility:hidden}
+#proj{--bg:#FFFFFF;--hair:#E4E4E1;--ink:#121413;--muted:#5E6360;color:var(--ink);position:fixed;inset:0;z-index:45;background:#FFFFFF;overflow:auto;overscroll-behavior:contain;clip-path:inset(50% 50% 50% 50%);visibility:hidden}
 #proj.show{visibility:visible}
 .pv{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);gap:clamp(28px,4.5vw,80px);padding:88px 0 0 max(28px,6.5vw,env(safe-area-inset-left,0px));min-height:100%}
 .pv-l{position:sticky;top:88px;align-self:start;display:grid;gap:18px;max-height:calc(100vh - 100px);overflow:auto;scrollbar-width:none;padding-bottom:20px}
@@ -296,7 +296,7 @@ a{color:inherit}
 .pv-next .d{white-space:nowrap;font-size:clamp(34px,3.2vw,60px)}
 .pv-next:hover .d{color:var(--line)}
 .pv-r{display:grid;gap:clamp(12px,1.4vw,20px)}
-.pv-r figure{margin:0;overflow:hidden;background:#DFDCD3}
+.pv-r figure{margin:0;overflow:hidden;background:#F4F4F2}
 .pv-r img{width:100%;height:auto}
 .pv-more{aspect-ratio:16/10;border:1px dashed var(--hair);display:grid;place-items:center;text-align:center;padding:20px}
 .pv-x{position:fixed;z-index:46;top:calc(env(safe-area-inset-top,0px) + 14px);right:var(--gutR);width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:22px;visibility:hidden}
