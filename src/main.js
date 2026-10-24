@@ -114,7 +114,10 @@ burger.addEventListener("click",function(){ setMenu(!root.classList.contains("me
 
 /* ---------- project view ---------- */
 var proj=$("#proj"), pvx=$("#pvx"), cur=-1, lastCard=null;
-function setPath(i){ try{ history.replaceState(null,"", i<0 ? "/" : "/projects/"+P[i].slug) }catch(e){} }
+// browser history: opening, switching and closing projects are real steps, so back and forward work
+function setPath(i, push){ var u = i<0 ? "/" : "/projects/"+P[i].slug; if(location.pathname===u) return;
+  try{ history[push?"pushState":"replaceState"]({proj:i},"",u) }catch(e){} }
+function pathIndex(){ var m=location.pathname.match(/^\/projects\/([^\/]+)/), k=-1; if(m) P.forEach(function(p,j){ if(p.slug===m[1]) k=j }); return k }
 var PV_SIZES="(max-width:760px) 100vw, 58vw";
 function preload(i,n){ return Promise.all(P[i].images.slice(0,n||2).map(function(u){ var im=new Image(); im.sizes=PV_SIZES; im.srcset=srcset(u); im.src=cld(u,1600); return im.decode ? im.decode().catch(function(){}) : Promise.resolve() })) }
 function renderProj(i, quiet){
@@ -131,8 +134,8 @@ function renderProj(i, quiet){
   setTimeout(function(){ preload((i+1)%P.length) },1200);
   if(proj.animate && !quiet) $$(".pv-r figure, .pv-l > *",proj).forEach(function(e,k){ e.animate([{opacity:0,transform:"translateY(40px)"},{opacity:1,transform:"none"}],{duration:900,delay:120+k*60,easing:"cubic-bezier(.2,.8,.2,1)",fill:"backwards"}) });
 }
-function openProj(i, card){
-  setPath(i);
+function openProj(i, card, fromHistory){
+  if(!fromHistory) setPath(i, true);
   cur=i; lastCard=card; renderProj(i);
   var r=card.getBoundingClientRect(), W=innerWidth, H=innerHeight;
   var from="inset("+Math.max(0,r.top)+"px "+Math.max(0,W-r.right)+"px "+Math.max(0,H-r.bottom)+"px "+Math.max(0,r.left)+"px)";
@@ -142,8 +145,8 @@ function openProj(i, card){
   pvx.focus({preventScroll:true});
 }
 var wipe=$("#wipe"), wpath=$("#wpath"), wtitle=$("#wtitle"), wnum=$("#wnum"), busy=false;
-function swap(i){
-  if(!wipe.animate||reduce){ cur=i; renderProj(i); return }
+function swap(i, fromHistory){
+  if(!wipe.animate||reduce){ cur=i; if(!fromHistory) setPath(i, true); renderProj(i); return }
   if(busy) return; busy=true;
   var p=P[i], k=0, ready=preload(i), t0w=Date.now();
   wnum.textContent="Next project · "+String(i+1).padStart(2,"0")+" / 06";
@@ -160,15 +163,15 @@ function swap(i){
     $$(".c",wtitle).forEach(function(c,j){ c.animate([{transform:"translateY(110%) rotate(6deg)",opacity:0},{transform:"none",opacity:1}],{duration:750,delay:60+j*38,easing:"cubic-bezier(.2,.8,.2,1)",fill:"both"}) });
     setTimeout(function(){ Promise.race([ready, new Promise(function(r){ setTimeout(r,2500) })]).then(reveal) },1250);
     function reveal(){
-      cur=i; setPath(i); renderProj(i, true);
+      cur=i; if(!fromHistory) setPath(i, true); renderProj(i, true);
       var a=wipe.animate([{clipPath:"inset(0 0 0% 0)"},{clipPath:"inset(0 0 100% 0)"}],{duration:750,easing:"cubic-bezier(.7,0,.2,1)",fill:"forwards"});
       a.onfinish=function(){ wipe.style.visibility="hidden"; wipe.classList.remove("on"); busy=false };
     }
   };
 }
-function closeProj(fromKey){
+function closeProj(fromKey, fromHistory){
   if(cur<0) return;
-  setPath(-1);
+  if(!fromHistory) setPath(-1, true);
   // land the main page on the project being viewed
   var card=D.querySelector('[data-proj="'+cur+'"]');
   if(card){ lastCard=card;
@@ -182,6 +185,12 @@ function closeProj(fromKey){
   if(proj.animate && !reduce){ var a=proj.animate([{clipPath:"inset(0px 0px 0px 0px)"},{clipPath:"inset(50% 50% 50% 50%)"}],{duration:700,easing:"cubic-bezier(.7,0,.2,1)",fill:"forwards"}); a.onfinish=fin } else fin();
 }
 pvx.addEventListener("click",function(){ closeProj(false) });
+addEventListener("popstate",function(){
+  var k=pathIndex();
+  if(k<0){ if(cur>=0) closeProj(false, true); return }
+  if(cur<0){ var card=D.querySelector('[data-proj="'+k+'"]'); if(card) openProj(k, card, true) }
+  else if(cur!==k){ if(busy){ cur=k; renderProj(k, true) } else swap(k, true) }
+});
 D.addEventListener("keydown",function(e){ if(e.key==="Escape"){ if(cur>=0) closeProj(true); else setMenu(false) } });
 D.addEventListener("click",function(e){ var c=e.target.closest&&e.target.closest("[data-proj]"); if(c){ openProj(+c.dataset.proj, c) } });
 
@@ -508,6 +517,6 @@ layout(); scrollTo(0,0); requestAnimationFrame(frame);
   setTimeout(function(){ var card=D.querySelector('[data-proj="'+di+'"]'); if(!card) return;
     var e=EL.filter(function(x){ return x.el.contains(card) })[0];
     if(e){ var y=e.st.sHold+2; scrollTo(0,y); sCam=y; dirty=true }
-    openProj(di,card) },700) })();
+    openProj(di,card,true) },700) })();
 if(D.fonts&&D.fonts.ready) D.fonts.ready.then(function(){ layout(); dirty=true });
 })();
