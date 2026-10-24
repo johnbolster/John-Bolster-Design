@@ -164,6 +164,8 @@ a{color:inherit}
 .sprayer{position:absolute;left:calc(100% + clamp(18px,2.4vw,46px));top:30px;bottom:0;aspect-ratio:210/300;pointer-events:none}
 .sprayer .spray{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .spray-mist{opacity:0}
+.spray-pool{transform-box:fill-box;transform-origin:50% 40%;transform:scale(0)}
+.spray-drip{stroke-dasharray:30;stroke-dashoffset:30}
 .spray-can{position:absolute;left:0;top:0;width:clamp(56px,5.6vw,110px);height:auto;filter:drop-shadow(0 10px 14px rgba(18,20,19,.18));will-change:transform}
 .el{--fp:1}
 .by{--sc:var(--ink);-webkit-text-stroke:1.3px var(--sc);color:transparent}

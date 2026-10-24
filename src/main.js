@@ -433,20 +433,25 @@ function spray(svg,p){
     var g=svg.querySelector(".spray-dots"), seed=11, h="";
     function r(){ seed=(seed*16807)%2147483647; return seed/2147483647 }
     svg._dots=[];
-    for(var q=0;q<90;q++){ var t=r(), pt=path.getPointAtLength(t*svg._L), a=r()*Math.PI*2, d=9+Math.pow(r(),1.6)*26;
+    for(var q=0;q<55;q++){ var t=r(), pt=path.getPointAtLength(t*svg._L), a=r()*Math.PI*2, d=10+Math.pow(r(),1.6)*20;
       h+='<circle cx="'+(pt.x+Math.cos(a)*d).toFixed(1)+'" cy="'+(pt.y+Math.sin(a)*d).toFixed(1)+'" r="'+(0.7+r()*2).toFixed(1)+'" opacity="0"/>'; svg._dots.push(t) }
     g.innerHTML=h; svg._dc=[].slice.call(g.children);
   }
-  path.style.strokeDashoffset=(svg._L*(1-p)).toFixed(1);
-  svg._dc.forEach(function(c,k){ var t=svg._dots[k]; c.setAttribute("opacity", p>t ? (0.35+0.5*((k*37)%10)/10).toFixed(2) : 0) });
-  mist.style.opacity = (p>0.01 && p<0.99 ? 1 : 0);
+  // the stroke goes on during the first part, then the paint pools at the bottom and drips
+  var ps=Math.min(1,p/0.55), pool=sm((p-0.4)/0.5), drip=clamp((p-0.72)/0.28,0,1);
+  path.style.strokeDashoffset=(svg._L*(1-ps)).toFixed(1);
+  var pl=svg.querySelector(".spray-pool"), dr=svg.querySelector(".spray-drip");
+  if(pl) pl.style.transform="scale("+pool.toFixed(3)+")";
+  if(dr) dr.style.strokeDashoffset=(30*(1-drip)).toFixed(1);
+  svg._dc.forEach(function(c,k){ var t=svg._dots[k]; c.setAttribute("opacity", ps>t ? (0.35+0.5*((k*37)%10)/10).toFixed(2) : 0) });
+  mist.style.opacity = (p>0.01 && p<0.9 ? 1 : 0);
   // the mist rides along with the tip of the stroke
-  var tip=path.getPointAtLength(Math.max(0.001,p)*svg._L); mist.setAttribute("cx",tip.x.toFixed(1)); mist.setAttribute("cy",tip.y.toFixed(1));
+  var tip=path.getPointAtLength(Math.max(0.001,ps)*svg._L); mist.setAttribute("cx",(tip.x+30).toFixed(1)); mist.setAttribute("cy",(tip.y-18).toFixed(1));
   // move the can so its nozzle (78% across, 5.6% down the cutout) sits on the tip of the paint
   var can=svg.parentNode.querySelector(".spray-can");
   if(can){ var box=svg.parentNode, sx=box.offsetWidth/160, sy=box.offsetHeight/300;
-    var dx=tip.x*sx - can.offsetWidth*0.781, dy=tip.y*sy - can.offsetHeight*0.056;
-    can.style.transform="translate("+dx.toFixed(1)+"px,"+dy.toFixed(1)+"px) rotate("+(Math.sin(p*9)*6).toFixed(1)+"deg)" }
+    var dx=(tip.x+74)*sx - can.offsetWidth*0.781, dy=(tip.y-44)*sy - can.offsetHeight*0.056;
+    can.style.transform="translate("+dx.toFixed(1)+"px,"+dy.toFixed(1)+"px) rotate("+(Math.sin(p*6)*2).toFixed(1)+"deg)" }
 }
 
 function para(w,p){
