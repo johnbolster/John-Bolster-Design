@@ -45,7 +45,7 @@ $("#work-stops").outerHTML = P.map(function(p,i){
   return '<section class="st" data-label="Work" data-gap="'+(i?1.55:2.2)+'" data-hold=".38" data-ease=".5" data-a="'+L.ax+','+L.ay+'" data-ma="'+(0.43*side)+',0.36">'+
     '<div class="el" data-p="'+L.x+','+L.y+'" data-mp="0,-0.02" data-z="0" data-f="'+(L.x<0?-.25:.25)+',0" data-r="'+(L.x<0?18:-18)+'">'+
       '<button class="card '+(L.x<0?"l":"r")+'" data-proj="'+i+'" style="width:'+L.w+'"><span class="fig" style="--ar:'+L.ar+'"><img src="'+cld(p.cover,1200)+'" srcset="'+srcset(p.cover)+'" sizes="(max-width:760px) 80vw, 36vw" alt="'+p.title+' project" loading="lazy" decoding="async"></span>'+
-      '<span class="meta"><span class="mono">'+String(i+1).padStart(2,"0")+' / 06</span><span class="mono">'+p.year+'</span></span>'+
+      '<span class="meta"><span class="mono">'+String(i+1).padStart(2,"0")+' / 06</span></span>'+
       '<span class="d '+(i%2?'t2':'b7')+'">'+p.title+'</span><span class="meta"><span class="small">'+p.category+'</span><span class="mono open">View</span></span></button>'+
     '</div></section>';
 }).join("");
@@ -124,9 +124,9 @@ function renderProj(i, quiet){
   var p=P[i], n=P[(i+1)%P.length];
   var paras=p.description.split("\n").filter(Boolean).map(function(t){return "<p>"+t+"</p>"}).join("");
   var imgs=p.images.map(function(s,k){return '<figure><img src="'+cld(s,1600)+'" srcset="'+srcset(s)+'" sizes="'+PV_SIZES+'" alt="'+p.title+' image '+(k+1)+'"'+(k>1?' loading="lazy" decoding="async"':'')+'></figure>'}).join("");
-  proj.innerHTML='<div class="pv"><div class="pv-l"><span class="mono">'+String(i+1).padStart(2,"0")+' / 06 · '+p.year+'</span><h2 class="d b9">'+p.title+'</h2>'+
+  proj.innerHTML='<div class="pv"><div class="pv-l"><span class="mono">'+String(i+1).padStart(2,"0")+' / 06</span><h2 class="d b9">'+p.title+'</h2>'+
   '<div><span class="mono">Overview</span><div style="margin-top:12px">'+paras+'</div></div>'+
-  '<dl class="pv-dl"><dt>Client</dt><dd>'+p.client+'</dd><dt>Year</dt><dd>'+p.year+'</dd><dt>Services</dt><dd>'+p.services.join(", ")+'</dd></dl>'+
+  '<dl class="pv-dl"><dt>Client</dt><dd>'+p.client+'</dd><dt>Services</dt><dd>'+p.services.join(", ")+'</dd></dl>'+
   '<button class="pv-next" id="pvn"><span class="mono">Next project</span><span class="d t1">'+n.title+'</span></button></div>'+
   '<div class="pv-r">'+imgs+'</div></div>';
   proj.scrollTop=0;
