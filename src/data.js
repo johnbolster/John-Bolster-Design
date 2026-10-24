@@ -84,7 +84,7 @@ export const JB = {
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772739165/Asset_12-50_fjwhdp.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772739165/Asset_16_e1faeu.png"
    ],
-   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772739166/A180-8-50_tpsviw.jpg",
+   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772739165/A180.psd-50_ndnaeu.jpg",
    "summary": "A peer-to-peer brand for veterans and first responders, built on the idea of doing a 180.",
    "discipline": "Identity"
   },
