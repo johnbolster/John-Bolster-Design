@@ -442,15 +442,16 @@ function spray(svg,p){
   path.style.strokeDashoffset=(svg._L*(1-ps)).toFixed(1);
   var pl=svg.querySelector(".spray-pool"), dr=svg.querySelector(".spray-drip");
   if(pl) pl.style.transform="scale("+pool.toFixed(3)+")";
-  if(dr) dr.style.strokeDashoffset=(30*(1-drip)).toFixed(1);
+  if(dr) dr.style.strokeDashoffset=(40*(1-drip)).toFixed(1);
   svg._dc.forEach(function(c,k){ var t=svg._dots[k]; c.setAttribute("opacity", ps>t ? (0.35+0.5*((k*37)%10)/10).toFixed(2) : 0) });
   mist.style.opacity = (p>0.01 && p<0.9 ? 1 : 0);
   // the mist rides along with the tip of the stroke
-  var tip=path.getPointAtLength(Math.max(0.001,ps)*svg._L); mist.setAttribute("cx",(tip.x+30).toFixed(1)); mist.setAttribute("cy",(tip.y-18).toFixed(1));
+  var tip=path.getPointAtLength(Math.max(0.001,ps)*svg._L); mist.setAttribute("cx",(tip.x+34).toFixed(1)); mist.setAttribute("cy",(tip.y-8).toFixed(1));
   // move the can so its nozzle (78% across, 5.6% down the cutout) sits on the tip of the paint
   var can=svg.parentNode.querySelector(".spray-can");
   if(can){ var box=svg.parentNode, sx=box.offsetWidth/160, sy=box.offsetHeight/300;
-    var dx=(tip.x+74)*sx - can.offsetWidth*0.781, dy=(tip.y-44)*sy - can.offsetHeight*0.056;
+    var st0=svg._st||(svg._st=path.getPointAtLength(0)), nx=st0.x+64+(tip.x-st0.x)*0.12, ny=st0.y-16+(p*14);
+    var dx=nx*sx - can.offsetWidth*0.781, dy=ny*sy - can.offsetHeight*0.056;
     can.style.transform="translate("+dx.toFixed(1)+"px,"+dy.toFixed(1)+"px) rotate("+(Math.sin(p*6)*2).toFixed(1)+"deg)" }
 }
 
