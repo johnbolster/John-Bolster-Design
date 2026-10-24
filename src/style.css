@@ -159,18 +159,18 @@ a{color:inherit}
 @media (prefers-reduced-motion:reduce){.crt-fill{animation:none;transform:scaleX(.99)}.crt-dots{animation:none}}
 #fx{position:fixed;inset:0;z-index:60;pointer-events:none;width:100%;height:100%}
 .by{font-size:clamp(34px,4.3vw,92px);line-height:.88}
-.by-block{display:grid;justify-items:start;text-align:left}
+.by-block{display:grid;justify-items:start;text-align:left;position:relative}
+/* Beyond design: a spray can travels down the right of the copy, painting a wave */
+.sprayer{position:absolute;left:calc(100% + clamp(18px,2.4vw,46px));top:30px;bottom:0;aspect-ratio:210/300;pointer-events:none}
+.sprayer .spray{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.spray-mist{opacity:0}
+.spray-can{position:absolute;left:0;top:0;width:clamp(56px,5.6vw,110px);height:auto;filter:drop-shadow(0 10px 14px rgba(18,20,19,.18));will-change:transform}
 .el{--fp:1}
 .by{--sc:var(--ink);-webkit-text-stroke:1.3px var(--sc);color:transparent}
 .by-acc{--sc:var(--line)}
 .by .c{--on:clamp(0, calc((var(--fp) * 1.7 - var(--li,0) * 0.22) * 15 - var(--i)), 1);color:color-mix(in srgb, var(--sc) calc(var(--on) * 100%), transparent)}
 .by-block .mono{margin-bottom:14px}
 .cut.pal{width:clamp(150px,17vw,320px)}
-.cut.can{width:clamp(110px,11.5vw,220px);filter:none}
-.cut.can img{filter:drop-shadow(0 12px 18px rgba(18,20,19,.16));position:relative;z-index:1}
-/* the spray: positioned so its start point (384,204 in the viewBox) sits on the can's nozzle */
-.spray-mist{opacity:0}
-.spray{position:absolute;width:290%;aspect-ratio:400/240;left:-200.4%;top:-87.8%;overflow:visible;pointer-events:none;z-index:0}
 .cut{margin:0;position:relative;transform:rotate(var(--rot,0deg));filter:drop-shadow(0 12px 18px rgba(18,20,19,.16))}
 .cut img{display:block;width:100%;height:auto}
 .cut.ih{width:clamp(110px,11vw,210px)}
@@ -180,7 +180,7 @@ a{color:inherit}
 .glint svg{width:100%;height:100%;fill:#FFF6C9;filter:drop-shadow(0 0 3px #FFD84D) drop-shadow(0 0 9px rgba(255,200,40,.9));animation:glint 1.8s ease-in-out infinite}
 @keyframes glint{0%,100%{transform:scale(.35) rotate(0deg);opacity:.55}45%{transform:scale(1) rotate(45deg);opacity:1}60%{transform:scale(.8) rotate(60deg);opacity:.95}}
 @media (prefers-reduced-motion:reduce){.glint svg{animation:none}}
-@media (max-width:760px){.by{font-size:clamp(30px,9vw,52px)}.cut.pal{width:38vw}.cut.can{width:24vw}.cut.ih{width:24vw}.cut.fh{width:26vw}.cut.ross{width:30vw}}
+@media (max-width:760px){.sprayer{left:auto;right:12%;top:calc(100% + 8px);bottom:auto;height:75%}.spray-can{width:13vw}.by{font-size:clamp(30px,9vw,52px)}.cut.pal{width:38vw}.cut.ih{width:24vw}.cut.fh{width:26vw}.cut.ross{width:30vw}}
 
 .beyond{display:grid;gap:12px;justify-items:center;text-align:center}
 .beyond .d{font-size:clamp(40px,5vw,96px);white-space:normal}
