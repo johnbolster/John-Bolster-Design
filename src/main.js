@@ -379,6 +379,8 @@ function place(zc){
       if(e.runner._p!==pose){ e.runner.classList.remove("run","pj"); e.runner.classList.add(pose); e.runner._p=pose }
       if(pose==="run" && e.runner._ph!==rf){ e.runner._ph=rf; rig(e.runner, rf*7*Math.PI*2) }
     }
+    if(e.spr===undefined) e.spr=e.el.querySelector(".spray");
+    if(e.spr) spray(e.spr, clamp((clamp((0.55*F-u)/(0.65*F),0,1)-0.25)/0.7,0,1));
     if(e.ctw===undefined) e.ctw=e.el.querySelector(".ct-wrap");
     if(e.ctw) para(e.ctw, clamp((sCam-(e.st.sHold-0.4*H))/(0.4*H+e.st.holdPx*0.95),0,1));
     e.el.style.pointerEvents = op>0.6 && s<1.6 ? "auto" : "none";
@@ -422,6 +424,26 @@ function numbers(zc){
 }
 
 /* scroll-driven run cycle: legs and arms swing in opposition */
+/* Beyond design: the spray can paints a stroke onto the page as it lands, and un-paints on the way back */
+function spray(svg,p){
+  if(svg._p===p) return; svg._p=p;
+  var path=svg.querySelector(".spray-p"), mist=svg.querySelector(".spray-mist");
+  if(!svg._L){
+    svg._L=path.getTotalLength(); path.style.strokeDasharray=svg._L;
+    var g=svg.querySelector(".spray-dots"), seed=11, h="";
+    function r(){ seed=(seed*16807)%2147483647; return seed/2147483647 }
+    svg._dots=[];
+    for(var q=0;q<90;q++){ var t=r(), pt=path.getPointAtLength(t*svg._L), a=r()*Math.PI*2, d=9+Math.pow(r(),1.6)*26;
+      h+='<circle cx="'+(pt.x+Math.cos(a)*d).toFixed(1)+'" cy="'+(pt.y+Math.sin(a)*d).toFixed(1)+'" r="'+(0.7+r()*2).toFixed(1)+'" opacity="0"/>'; svg._dots.push(t) }
+    g.innerHTML=h; svg._dc=[].slice.call(g.children);
+  }
+  path.style.strokeDashoffset=(svg._L*(1-p)).toFixed(1);
+  svg._dc.forEach(function(c,k){ var t=svg._dots[k]; c.setAttribute("opacity", p>t ? (0.35+0.5*((k*37)%10)/10).toFixed(2) : 0) });
+  mist.style.opacity = (p>0.01 && p<0.99 ? 1 : 0);
+  // the mist rides along with the tip of the stroke
+  var tip=path.getPointAtLength(Math.max(0.001,p)*svg._L); mist.setAttribute("cx",tip.x.toFixed(1)); mist.setAttribute("cy",tip.y.toFixed(1));
+}
+
 function para(w,p){
   if(w._p===p) return; w._p=p;
   if(!w._k) w._k={h:w.querySelector("h2"),pa:w.querySelector(".para"),cs:[].slice.call(w.querySelectorAll(".c"))};
