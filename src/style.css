@@ -91,8 +91,8 @@ a{color:inherit}
 .h-bolster{font-size:clamp(110px,21vw,440px)}
 .h-name{font-size:clamp(84px,17.5vw,380px)}
 /* as the hero rushes past, John and Bolster pull apart */
-.h-name .w:first-child{transform:translate3d(calc(var(--dp,0) * -10vw),0,0)}
-.h-name .w:last-child{transform:translate3d(calc(var(--dp,0) * 10vw),0,0)}
+.h-name .w:first-child{transform:translate3d(calc(var(--sp,0) * -10vw),0,0)}
+.h-name .w:last-child{transform:translate3d(calc(var(--sp,0) * 10vw),0,0)}
 .h-cap{display:grid;gap:10px;width:min(330px,80vw)}
 .h-cue{display:flex;gap:10px;align-items:center}
 .h-cue i{width:1px;height:36px;background:var(--ink);display:block;transform-origin:top;animation:cue 2.2s cubic-bezier(.7,0,.2,1) infinite}

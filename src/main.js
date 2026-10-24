@@ -357,6 +357,9 @@ function place(zc){
     e.el.style.setProperty("--k", k.toFixed(3));
     e.el.style.setProperty("--fp", clamp((0.55*F-u)/(0.65*F),0,1).toFixed(3));
     e.el.style.setProperty("--dp", sm((-u-0.03*F)/(0.38*F)).toFixed(3));
+    // --sp: like --dp, but keeps easing outward (slower) instead of stopping
+    var tsp=Math.max(0,(-u-0.03*F)/(0.38*F)), sp = tsp<1 ? (3*tsp*tsp-2*tsp*tsp*tsp) + 0.35*(tsp*tsp*tsp-tsp*tsp) : 1+0.35*(tsp-1);
+    e.el.style.setProperty("--sp", sp.toFixed(3));
     if(e.pose===undefined) e.pose=[].slice.call(e.el.querySelectorAll(".pose img"));
     if(e.pose.length){
       var pf=Math.round(clamp((-u+0.04*F)/(0.42*F),0,1)*(e.pose.length-1));
