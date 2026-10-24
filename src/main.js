@@ -24,7 +24,7 @@ var SP=[[-0.27,-0.1,0.5,-0.16,-0.2],[0.26,0.2,0.18,0.16,0.02],[0.29,-0.24,0.85,0
 $(".svc-st").insertAdjacentHTML("beforeend", S.map(function(g,j){ var p=SP[j];
   return '<div class="el" data-abs="1" data-p="'+p[0]+','+p[1]+'" data-mp="'+p[3]+','+p[4]+'" data-z="'+p[2]+'" data-f="0,0"><p class="d svc-nm">'+g.n+'</p></div>' }).join("")
   + (function(){ var h="", seed=7; function r(){ seed=(seed*16807)%2147483647; return seed/2147483647 }
-      for(var q=0;q<34;q++){ var x=(r()-.5)*1.3, y=(r()-.5)*1.05, z=-0.3+r()*1.9, sz=2+Math.round(r()*3);
+      for(var q=0;q<34;q++){ var x=(r()-.5)*1.3, y=(r()-.5)*1.05, z=-0.3+r()*1.9, sz=3+Math.round(r()*4);
         h+='<div class="el" data-abs="1" data-p="'+x.toFixed(3)+','+y.toFixed(3)+'" data-mp="'+(x*.8).toFixed(3)+','+y.toFixed(3)+'" data-z="'+z.toFixed(2)+'" data-f="0,0" aria-hidden="true"><i class="star" style="width:'+sz+'px;height:'+sz+'px"></i></div>' }
       return h })());
 
