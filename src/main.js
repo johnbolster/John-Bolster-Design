@@ -123,9 +123,14 @@ function preload(i,n){ return Promise.all(P[i].images.slice(0,n||2).map(function
 function renderProj(i, quiet){
   var p=P[i], n=P[(i+1)%P.length];
   var paras=p.description.split("\n").filter(Boolean).map(function(t){return "<p>"+t+"</p>"}).join("");
-  var imgs=p.images.map(function(s,k){return '<figure><img src="'+cld(s,1600)+'" srcset="'+srcset(s)+'" sizes="'+PV_SIZES+'" alt="'+p.title+' image '+(k+1)+'"'+(k>1?' loading="lazy" decoding="async"':'')+'></figure>'}).join("");
-  // social videos: muted, looping, side by side on white
-  if(p.videos && p.videos.length) imgs+='<div class="pv-vids">'+p.videos.map(function(v){ var u=v.replace("/upload/","/upload/f_auto:video,q_auto,w_900/"); return '<figure class="pv-vid"><video src="'+u+'" poster="'+v.replace("/upload/","/upload/so_1,f_jpg,q_auto,w_900/").replace(/\.mp4$/,".jpg")+'" muted loop playsinline autoplay preload="metadata"></video></figure>' }).join("")+'</div>';
+  var parts=p.images.map(function(s,k){return '<figure><img src="'+cld(s,1600)+'" srcset="'+srcset(s)+'" sizes="'+PV_SIZES+'" alt="'+p.title+' image '+(k+1)+'"'+(k>1?' loading="lazy" decoding="async"':'')+'></figure>'});
+  // videos: each can sit after a given image ("after": n) or default to the end; loose videos are centered, end ones sit half width
+  function vidHTML(v,cls){ var src=v.src||v, u=src.replace("/upload/","/upload/f_auto:video,q_auto,w_900/"), po=src.replace("/upload/","/upload/so_1,f_jpg,q_auto,w_900/").replace(/\.mp4$/,".jpg");
+    return '<figure class="pv-vid '+cls+'"><video src="'+u+'" poster="'+po+'" muted loop playsinline autoplay preload="metadata"></video></figure>' }
+  var tail=[];
+  (p.videos||[]).slice().reverse().forEach(function(v){ if(v.after!=null) parts.splice(v.after,0,vidHTML(v,"mid")); else tail.unshift(v) });
+  var imgs=parts.join("");
+  if(tail.length) imgs+='<div class="pv-vids">'+tail.map(function(v){ return vidHTML(v,"") }).join("")+'</div>';
   proj.innerHTML='<div class="pv"><div class="pv-l"><span class="mono">'+String(i+1).padStart(2,"0")+' / 06</span><h2 class="d b9">'+p.title+'</h2>'+
   '<div><span class="mono">Overview</span><div style="margin-top:12px">'+paras+'</div></div>'+
   '<dl class="pv-dl"><dt>Client</dt><dd>'+p.client+'</dd><dt>Services</dt><dd>'+p.services.join(", ")+'</dd></dl>'+

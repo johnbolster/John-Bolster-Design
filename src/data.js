@@ -195,7 +195,7 @@ export const JB = {
    ],
    "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1792946873/3-80_tloqpj.jpg",
    "videos": [
-    "https://res.cloudinary.com/dnf3dn2wb/video/upload/v1792947128/Siena-Social-Master_ljvcno.mp4",
+    {"src": "https://res.cloudinary.com/dnf3dn2wb/video/upload/v1792947128/Siena-Social-Master_ljvcno.mp4", "after": 4},
     "https://res.cloudinary.com/dnf3dn2wb/video/upload/v1792947360/SIEN_SOBGradCerts_1080x1080_br3s2n.mp4"
    ],
    "summary": "Social campaigns, motion, a logo and a banner for Siena.",
