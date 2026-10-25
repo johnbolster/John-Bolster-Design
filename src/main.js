@@ -380,7 +380,7 @@ function place(zc){
       if(pose==="run" && e.runner._ph!==rf){ e.runner._ph=rf; rig(e.runner, rf*7*Math.PI*2) }
     }
     if(e.spr===undefined) e.spr=e.el.querySelector(".spray");
-    if(e.spr) spray(e.spr, clamp((clamp((0.55*F-u)/(0.65*F),0,1)-0.12)/0.78,0,1));
+    if(e.spr) spray(e.spr, clamp((clamp((0.55*F-u)/(0.65*F),0,1)-0.3)/0.68,0,1));
     if(e.ctw===undefined) e.ctw=e.el.querySelector(".ct-wrap");
     if(e.ctw) para(e.ctw, clamp((sCam-(e.st.sHold-0.4*H))/(0.4*H+e.st.holdPx*0.95),0,1));
     e.el.style.pointerEvents = op>0.6 && s<1.6 ? "auto" : "none";
@@ -440,9 +440,11 @@ function spray(svg,p){
   // the stroke goes on during the first part, then the paint pools at the bottom and drips
   var ps=Math.min(1,p/0.55), pool=sm((p-0.4)/0.5), drip=clamp((p-0.72)/0.28,0,1);
   path.style.strokeDashoffset=(svg._L*(1-ps)).toFixed(1);
+  // round line caps leave a dot at zero length, so hide the strokes until they actually start
   var pl=svg.querySelector(".spray-pool"), dr=svg.querySelector(".spray-drip");
   if(pl) pl.style.transform="scale("+pool.toFixed(3)+")";
-  if(dr) dr.style.strokeDashoffset=(40*(1-drip)).toFixed(1);
+  if(dr){ dr.style.strokeDashoffset=(40*(1-drip)).toFixed(1); dr.style.opacity = drip>0.01 ? 1 : 0 }
+  path.style.opacity = ps>0.005 ? 1 : 0;
   svg._dc.forEach(function(c,k){ var t=svg._dots[k]; c.setAttribute("opacity", ps>t ? (0.35+0.5*((k*37)%10)/10).toFixed(2) : 0) });
   mist.style.opacity = (p>0.01 && p<0.9 ? 1 : 0);
   // the mist rides along with the tip of the stroke
