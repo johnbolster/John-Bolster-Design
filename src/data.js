@@ -101,15 +101,15 @@ export const JB = {
     "Environmental Design"
    ],
    "images": [
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741871/6_jg6jua.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741870/4_pb4mnm.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741867/11_xpaay2.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741867/7_qi3ieh.png",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741866/19_bkwn2o.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741862/17_aokwzd.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741860/16_fyry3c.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741858/8_mip4nd.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741855/9_g9l3y9.png"
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741858/10_kdcp2q.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741855/9_g9l3y9.png",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741856/12_gngzn1.jpg"
    ],
    "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741866/19_bkwn2o.jpg",
    "summary": "A farm brand with a crown and a point of view. Drink like a King.",
