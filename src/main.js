@@ -1,6 +1,8 @@
+import { inject } from "@vercel/analytics";
 import "./style.css";
 import { JB } from "./data.js";
 window.JB = JB;
+inject();
 (function(){
 "use strict";
 var JB = window.JB, D = document, root = D.documentElement;
