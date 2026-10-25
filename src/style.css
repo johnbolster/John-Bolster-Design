@@ -161,7 +161,7 @@ a{color:inherit}
 .by{font-size:clamp(34px,4.3vw,92px);line-height:.88}
 .by-block{display:grid;justify-items:start;text-align:left;position:relative}
 /* Beyond design: a spray can travels down the right of the copy, painting a wave */
-.sprayer{position:absolute;left:calc(100% + clamp(64px,6.5vw,150px));top:30px;bottom:0;aspect-ratio:210/300;pointer-events:none}
+.sprayer{position:absolute;left:calc(100% + clamp(110px,11vw,280px));top:30px;bottom:0;aspect-ratio:210/300;pointer-events:none}
 .sprayer .spray{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .spray-mist{opacity:0}
 .spray-pool{transform-box:fill-box;transform-origin:50% 40%;transform:scale(0)}
