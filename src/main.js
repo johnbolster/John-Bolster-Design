@@ -115,7 +115,11 @@ burger.addEventListener("click",function(){ setMenu(!root.classList.contains("me
 /* ---------- project view ---------- */
 var proj=$("#proj"), pvx=$("#pvx"), cur=-1, lastCard=null;
 // browser history: opening, switching and closing projects are real steps, so back and forward work
-function setPath(i, push){ var u = i<0 ? "/" : "/projects/"+P[i].slug; if(location.pathname===u) return;
+var HOME_META={ t:"John Bolster · Brand Identity Designer and Art Director, Saratoga Springs NY", d:"Independent brand identity designer and art director in Saratoga Springs, NY. Brand strategy, identity, print and web for businesses, higher ed, healthcare and nonprofits." };
+function setMeta(i){ var md=D.querySelector('meta[name="description"]'), cn=D.querySelector('link[rel="canonical"]');
+  if(i<0){ D.title=HOME_META.t; if(md) md.content=HOME_META.d; if(cn) cn.href="https://johnbolster.design/"; return }
+  var p=P[i]; D.title=(p.seoTitle||p.title)+" | John Bolster"; if(md&&p.seoDescription) md.content=p.seoDescription; if(cn) cn.href="https://johnbolster.design/projects/"+p.slug }
+function setPath(i, push){ var u = i<0 ? "/" : "/projects/"+P[i].slug; setMeta(i); if(location.pathname===u) return;
   try{ history[push?"pushState":"replaceState"]({proj:i},"",u) }catch(e){} }
 function pathIndex(){ var m=location.pathname.match(/^\/projects\/([^\/]+)/), k=-1; if(m) P.forEach(function(p,j){ if(p.slug===m[1]) k=j }); return k }
 var PV_SIZES="(max-width:760px) 100vw, 58vw";

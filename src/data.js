@@ -86,7 +86,9 @@ export const JB = {
    ],
    "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772739165/A180.psd-50_ndnaeu.jpg",
    "summary": "A peer-to-peer brand for veterans and first responders, built on the idea of doing a 180.",
-   "discipline": "Identity"
+   "discipline": "Identity",
+   "seoTitle": "Alliance 180 · Nonprofit Brand Identity Design",
+   "seoDescription": "Brand strategy, visual identity and web design for Alliance 180, a peer to peer program for veterans and first responders."
   },
   {
    "slug": "king-brothers-dairy",
@@ -116,7 +118,9 @@ export const JB = {
    ],
    "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772741866/19_bkwn2o.jpg",
    "summary": "A farm brand with a crown and a point of view. Drink like a King.",
-   "discipline": "Identity"
+   "discipline": "Identity",
+   "seoTitle": "King Brothers Dairy · Brand Strategy and Identity Design",
+   "seoDescription": "A crown, a point of view and a brand people remember. Brand strategy, identity, packaging and environmental design for King Brothers Dairy."
   },
   {
    "slug": "dlg",
@@ -146,7 +150,9 @@ export const JB = {
    ],
    "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1775302294/DLG_MG_5557-Edit-print_eipjl6.jpg",
    "summary": "An editorial, black-and-white identity for a national litigation firm, anchored by a hardcover brand book.",
-   "discipline": "Identity"
+   "discipline": "Identity",
+   "seoTitle": "DLG · Law Firm Rebrand and Brand Book Design",
+   "seoDescription": "A bold black and white rebrand and a hardcover brand manifesto for national litigation firm DLG, designed by John Bolster."
   },
   {
    "slug": "saint",
@@ -173,7 +179,9 @@ export const JB = {
    ],
    "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744368/1-50_g3xpzk.jpg",
    "summary": "A science-forward identity for a breakthrough in treatment-resistant depression.",
-   "discipline": "Identity"
+   "discipline": "Identity",
+   "seoTitle": "SAINT · Healthcare Brand Identity Design",
+   "seoDescription": "A science forward healthcare brand identity for SAINT, a breakthrough treatment for treatment resistant depression."
   },
   {
    "slug": "siena",
@@ -208,7 +216,9 @@ export const JB = {
     }
    ],
    "summary": "Social campaigns, motion, a logo and a banner for Siena University.",
-   "discipline": "Social"
+   "discipline": "Social",
+   "seoTitle": "Siena University · Higher Education Social Media and Branding",
+   "seoDescription": "Social media campaigns, motion graphics, a logo and a campus banner for Siena University, designed by brand identity designer John Bolster."
   },
   {
    "slug": "finishline",
@@ -231,7 +241,9 @@ export const JB = {
    ],
    "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772818230/1_ajppmc.jpg",
    "summary": "A recruitment brand book for 700+ stores, built on energy and momentum.",
-   "discipline": "Art Direction"
+   "discipline": "Art Direction",
+   "seoTitle": "Finish Line · Recruitment Brand Book and Art Direction",
+   "seoDescription": "Creative direction and a recruitment brand book for Finish Line, built to attract a new generation of talent across 700+ stores."
   }
  ]
 };
