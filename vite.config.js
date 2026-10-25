@@ -68,7 +68,7 @@ footer{max-width:860px;margin:0 auto;padding:0 max(20px,4vw) 6vh;font:12px Geist
 </head><body>
 <header class="bar"><a href="/">John Bolster</a><nav><a href="/">Work</a><a href="/services">Services</a><a href="/faq">FAQ</a><a href="mailto:${INTRO.email}">Contact</a></nav></header>
 <main>${body}</main>
-<footer><span>${esc(INTRO.location)}</span><a href="mailto:${INTRO.email}">${INTRO.email}</a><a href="https://www.linkedin.com/in/johnbolster/">LinkedIn</a><a href="https://www.instagram.com/johnbolster.design/">Instagram</a><span>© 2026 John Bolster Design</span></footer>
+<footer><a href="/saratoga-springs-brand-designer">${esc(INTRO.location)}</a><a href="mailto:${INTRO.email}">${INTRO.email}</a><a href="https://www.linkedin.com/in/johnbolster/">LinkedIn</a><a href="https://www.instagram.com/johnbolster.design/">Instagram</a><span>© 2026 John Bolster Design</span></footer>
 </body></html>`;
 }
 
@@ -86,6 +86,28 @@ function servicesPage() {
   return page({ title: 'Brand Strategy, Identity and Design Services | John Bolster, Saratoga Springs NY', desc: 'Brand strategy, brand identity, art direction, print, and web and digital design from John Bolster, an independent brand designer in Saratoga Springs, NY.', url, body, ld });
 }
 
+function localPage() {
+  const url = SITE + '/saratoga-springs-brand-designer';
+  const body = `<span class="k">Saratoga Springs, NY</span><h1>Brand designer in Saratoga Springs</h1>
+<p class="lede">I'm John Bolster, an independent brand identity designer and art director based in Saratoga Springs. For more than two decades I've helped businesses, schools and nonprofits build brands that are clear, distinctive and built to last, and I'd love to do the same for yours.</p>
+<h2>Local, in person</h2>
+<p>Working with someone nearby still matters. I meet clients in Saratoga Springs, Ballston Spa, Glens Falls, Albany, Troy, Schenectady and across the Capital Region, whether that's a kickoff over coffee on Broadway, a walk through your shop to see how customers experience your brand, or a review of printed proofs side by side.</p>
+<p>Recent Capital Region work includes social campaigns, motion and a logo for <a href="/projects/siena">Siena University</a> in Loudonville, and a full rebrand for <a href="/projects/king-brothers-dairy">King Brothers Dairy</a>, a family dairy in the Capital Region, built around one idea: Drink like a King.</p>
+<h2>What I can help with</h2><div class="grid">${SERVICES.map((s) => `<div><h3>${esc(s.name)}</h3><p>${esc(s.text)}</p></div>`).join('')}</div>
+<h2>Who I work with locally</h2>
+<p>Restaurants, farms and food brands, schools and colleges, healthcare practices, nonprofits, professional services firms and growing local businesses that are ready to look as good as they are. I also partner with Capital Region marketing and advertising agencies as a freelance art director.</p>
+<ul class="tags">${INDUSTRIES.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>
+<h2>Not local? No problem</h2>
+<p>I also work with clients across the US, from national litigation firms to healthcare brands. The process works just as well over video calls, and you get the same attention either way.</p>
+<h2>Selected work</h2><ul>${JB.projects.map((p) => `<li><a href="/projects/${p.slug}">${esc(p.title)}</a>: ${esc(p.seoDescription)}</li>`).join('')}</ul>
+<a class="cta" href="mailto:${INTRO.email}?subject=New%20project">Start a project</a>`;
+  const ld = { '@context': 'https://schema.org', '@type': 'ProfessionalService', '@id': SITE + '/#studio', name: 'John Bolster Design', url: SITE + '/', image: SITE + '/og.png', email: INTRO.email,
+    address: { '@type': 'PostalAddress', addressLocality: 'Saratoga Springs', addressRegion: 'NY', addressCountry: 'US' },
+    areaServed: ['Saratoga Springs, NY', 'Ballston Spa, NY', 'Glens Falls, NY', 'Albany, NY', 'Troy, NY', 'Schenectady, NY', 'Capital Region, NY', 'United States'],
+    sameAs: ['https://g.page/r/CX3yfXTNIJFMEBM', 'https://www.linkedin.com/in/johnbolster/'], founder: { '@type': 'Person', name: 'John Bolster' } };
+  return page({ title: 'Brand Designer in Saratoga Springs, NY | John Bolster', desc: 'John Bolster is a brand identity designer and art director in Saratoga Springs, NY, working with businesses, schools and nonprofits across the Capital Region and the US.', url, body, ld });
+}
+
 function faqPage() {
   const url = SITE + '/faq';
   const body = `<span class="k">FAQ</span><h1>Questions, answered</h1>
@@ -101,7 +123,7 @@ function llmsTxt() {
     SERVICES.map((s) => `- **${s.name}**: ${s.text}`).join('\n') +
     `\n\n## Industries\n\n${INDUSTRIES.join(', ')}.\n\n## Selected work\n\n` +
     JB.projects.map((p) => `- [${p.title}](${SITE}/projects/${p.slug}): ${p.seoDescription}`).join('\n') +
-    `\n\n## Pages\n\n- [Services and process](${SITE}/services)\n- [FAQ](${SITE}/faq)\n\n## FAQ\n\n` +
+    `\n\n## Pages\n\n- [Services and process](${SITE}/services)\n- [FAQ](${SITE}/faq)\n- [Brand designer in Saratoga Springs, NY](${SITE}/saratoga-springs-brand-designer)\n\n## FAQ\n\n` +
     FAQ.map(([q, a]) => `### ${q}\n${a}`).join('\n\n') + '\n';
 }
 
@@ -115,8 +137,8 @@ function seoPages() {
       const raw = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
       const base = raw.replace('<!--SEO-->', '');
       fs.writeFileSync(path.join(dist, 'index.html'), raw.replace('<!--SEO-->', `<noscript>${homeText()}</noscript>`));
-      const urls = [SITE + '/', SITE + '/services', SITE + '/faq'];
-      for (const [slug, html] of [['services', servicesPage()], ['faq', faqPage()]]) {
+      const urls = [SITE + '/', SITE + '/services', SITE + '/faq', SITE + '/saratoga-springs-brand-designer'];
+      for (const [slug, html] of [['services', servicesPage()], ['faq', faqPage()], ['saratoga-springs-brand-designer', localPage()]]) {
         fs.mkdirSync(path.join(dist, slug), { recursive: true });
         fs.writeFileSync(path.join(dist, slug, 'index.html'), html);
       }
