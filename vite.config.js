@@ -68,7 +68,7 @@ footer{max-width:860px;margin:0 auto;padding:0 max(20px,4vw) 6vh;font:12px Geist
 </head><body>
 <header class="bar"><a href="/">John Bolster</a><nav><a href="/">Work</a><a href="/services">Services</a><a href="/faq">FAQ</a><a href="mailto:${INTRO.email}">Contact</a></nav></header>
 <main>${body}</main>
-<footer><a href="/saratoga-springs-brand-designer">${esc(INTRO.location)}</a><a href="mailto:${INTRO.email}">${INTRO.email}</a><a href="https://www.linkedin.com/in/johnbolster/">LinkedIn</a><a href="https://www.instagram.com/johnbolster.design/">Instagram</a><span>© 2026 John Bolster Design</span></footer>
+<footer><a href="/saratoga-springs-brand-designer">${esc(INTRO.location)}</a><a href="/freelance-brand-designer">Remote clients</a><a href="mailto:${INTRO.email}">${INTRO.email}</a><a href="https://www.linkedin.com/in/johnbolster/">LinkedIn</a><a href="https://www.instagram.com/johnbolster.design/">Instagram</a><span>© 2026 John Bolster Design</span></footer>
 </body></html>`;
 }
 
@@ -78,7 +78,7 @@ function servicesPage() {
 <p class="lede">${esc(INTRO.summary)}</p>
 <h2>What I do</h2><div class="grid">${SERVICES.map((s) => `<div><h3>${esc(s.name)}</h3><p>${esc(s.text)}</p><ul>${s.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></div>`).join('')}</div>
 <h2>How it works</h2><ol class="steps">${PROCESS.map(([t, d]) => `<li><b>${esc(t)}</b>${esc(d)}</li>`).join('')}</ol>
-<h2>Who I work with</h2><p>Businesses and organizations that need a brand they can grow into, and agencies that need a senior freelance art director and designer. Local clients in Saratoga Springs and the Capital Region, and remote clients anywhere in the US.</p>
+<h2>Who I work with</h2><p>Businesses and organizations that need a brand they can grow into, and agencies that need a senior freelance art director and designer. Local clients in Saratoga Springs and the Capital Region, and <a href="/freelance-brand-designer">remote clients anywhere in the US</a>.</p>
 <ul class="tags">${INDUSTRIES.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>
 <h2>Selected work</h2><ul>${JB.projects.map((p) => `<li><a href="/projects/${p.slug}">${esc(p.title)}</a>: ${esc(p.seoDescription)}</li>`).join('')}</ul>
 <a class="cta" href="mailto:${INTRO.email}?subject=New%20project">Start a project</a>`;
@@ -108,6 +108,33 @@ function localPage() {
   return page({ title: 'Brand Designer in Saratoga Springs, NY | John Bolster', desc: 'John Bolster is a brand identity designer and art director in Saratoga Springs, NY, working with businesses, schools and nonprofits across the Capital Region and the US.', url, body, ld });
 }
 
+function remotePage() {
+  const url = SITE + '/freelance-brand-designer';
+  const body = `<span class="k">Freelance brand identity designer</span><h1>A senior brand designer, without the agency overhead</h1>
+<p class="lede">I'm John Bolster, an independent brand identity designer and art director with more than two decades of experience. Small businesses, growing companies, schools, nonprofits and agencies across the US hire me for strategy-led brand identities that hold up over time.</p>
+<h2>Why work with an independent designer</h2>
+<div class="grid">
+<div><h3>You work with me, directly</h3><p>No account managers or junior handoffs. The person you talk to is the person doing the strategy and the design, start to finish.</p></div>
+<div><h3>Strategy before design</h3><p>Every identity starts with positioning, audience and messaging, so the visuals have a reason behind them. I also built Distinkt, an AI brand strategy tool for designers, so strategy is a big part of how I think.</p></div>
+<div><h3>Agency experience, freelance flexibility</h3><p>Two decades of work for national brands in healthcare, legal, education, retail and food, scoped to what you actually need.</p></div>
+</div>
+<h2>Brand design for small businesses</h2>
+<p>If your business has outgrown a logo someone made in a weekend, a clear brand identity makes everything easier: your website, your signage, your social posts and your sales conversations. I help small and growing businesses define what makes them different, then build a logo, color and type system and guidelines that make it easy to look consistent everywhere.</p>
+<h2>Freelance art direction for agencies</h2>
+<p>Marketing and advertising agencies bring me in as a freelance art director and senior designer when they need an extra pair of experienced hands on brand identity, campaigns, print and digital work. I can plug into your team for a single project or an ongoing relationship, and work under your brand or mine.</p>
+<h2>What I do</h2><div class="grid">${SERVICES.map((s) => `<div><h3>${esc(s.name)}</h3><p>${esc(s.text)}</p></div>`).join('')}</div>
+<h2>How remote projects work</h2><ol class="steps">${PROCESS.map(([t, d]) => `<li><b>${esc(t)}</b>${esc(d)}</li>`).join('')}</ol>
+<p>Everything happens over video calls, shared presentations and email, and it works just as well as being in the same room. If you are near Saratoga Springs, NY, we can also <a href="/saratoga-springs-brand-designer">meet in person</a>.</p>
+<h2>Industries</h2><ul class="tags">${INDUSTRIES.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>
+<h2>Selected work</h2><ul>${JB.projects.map((p) => `<li><a href="/projects/${p.slug}">${esc(p.title)}</a>: ${esc(p.seoDescription)}</li>`).join('')}</ul>
+<p>Questions about pricing, timelines or how projects work? See the <a href="/faq">FAQ</a>.</p>
+<a class="cta" href="mailto:${INTRO.email}?subject=New%20project">Start a project</a>`;
+  const ld = { '@context': 'https://schema.org', '@type': 'Service', name: 'Freelance brand identity design and art direction', serviceType: 'Brand identity design', provider: { '@id': SITE + '/#studio' },
+    areaServed: { '@type': 'Country', name: 'United States' }, audience: [{ '@type': 'BusinessAudience', name: 'Small businesses' }, { '@type': 'BusinessAudience', name: 'Marketing and advertising agencies' }],
+    description: 'Strategy-led brand identity design and freelance art direction for small businesses, growing companies, nonprofits and agencies across the US.' };
+  return page({ title: 'Freelance Brand Identity Designer for Small Businesses and Agencies | John Bolster', desc: 'Hire John Bolster, a senior freelance brand identity designer and art director. Strategy-led logos, identities and brand guidelines for small businesses, nonprofits and agencies across the US.', url, body, ld });
+}
+
 function faqPage() {
   const url = SITE + '/faq';
   const body = `<span class="k">FAQ</span><h1>Questions, answered</h1>
@@ -123,7 +150,7 @@ function llmsTxt() {
     SERVICES.map((s) => `- **${s.name}**: ${s.text}`).join('\n') +
     `\n\n## Industries\n\n${INDUSTRIES.join(', ')}.\n\n## Selected work\n\n` +
     JB.projects.map((p) => `- [${p.title}](${SITE}/projects/${p.slug}): ${p.seoDescription}`).join('\n') +
-    `\n\n## Pages\n\n- [Services and process](${SITE}/services)\n- [FAQ](${SITE}/faq)\n- [Brand designer in Saratoga Springs, NY](${SITE}/saratoga-springs-brand-designer)\n\n## FAQ\n\n` +
+    `\n\n## Pages\n\n- [Services and process](${SITE}/services)\n- [FAQ](${SITE}/faq)\n- [Brand designer in Saratoga Springs, NY](${SITE}/saratoga-springs-brand-designer)\n- [Freelance brand identity designer for small businesses and agencies](${SITE}/freelance-brand-designer)\n\n## FAQ\n\n` +
     FAQ.map(([q, a]) => `### ${q}\n${a}`).join('\n\n') + '\n';
 }
 
@@ -137,8 +164,8 @@ function seoPages() {
       const raw = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
       const base = raw.replace('<!--SEO-->', '');
       fs.writeFileSync(path.join(dist, 'index.html'), raw.replace('<!--SEO-->', `<noscript>${homeText()}</noscript>`));
-      const urls = [SITE + '/', SITE + '/services', SITE + '/faq', SITE + '/saratoga-springs-brand-designer'];
-      for (const [slug, html] of [['services', servicesPage()], ['faq', faqPage()], ['saratoga-springs-brand-designer', localPage()]]) {
+      const urls = [SITE + '/', SITE + '/services', SITE + '/faq', SITE + '/saratoga-springs-brand-designer', SITE + '/freelance-brand-designer'];
+      for (const [slug, html] of [['services', servicesPage()], ['faq', faqPage()], ['saratoga-springs-brand-designer', localPage()], ['freelance-brand-designer', remotePage()]]) {
         fs.mkdirSync(path.join(dist, slug), { recursive: true });
         fs.writeFileSync(path.join(dist, slug, 'index.html'), html);
       }
