@@ -306,6 +306,9 @@ a{color:inherit}
 .pv-r{display:grid;gap:clamp(12px,1.4vw,20px)}
 .pv-r figure{margin:0;overflow:hidden;background:#F4F4F2}
 .pv-r img{width:100%;height:auto}
+.pv-vids{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.4vw,20px)}
+.pv-r .pv-vid{margin:0;background:#fff}
+.pv-vid video{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;background:#fff}
 .pv-more{aspect-ratio:16/10;border:1px dashed var(--hair);display:grid;place-items:center;text-align:center;padding:20px}
 .pv-x{position:fixed;z-index:46;top:calc(env(safe-area-inset-top,0px) + 14px);right:var(--gutR);width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:22px;visibility:hidden}
 #proj.show ~ .pv-x{visibility:visible}

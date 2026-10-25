@@ -173,30 +173,33 @@ export const JB = {
    "discipline": "Identity"
   },
   {
-   "slug": "natroba",
-   "title": "Natroba™",
-   "category": "Brand Design",
-   "year": "2020",
-   "client": "Natroba™",
-   "description": "Over the counter lice treatments fail at resistance rates as high as 98.3%, yet they remain the default.\n\nWe built the campaign around two imperatives, Rethink and Resolve. High contrast color, stark type and macro imagery command attention in clinical settings, while resistance data creates urgency and positions Natroba as the prescription first solution.",
+   "slug": "siena",
+   "title": "Siena",
+   "category": "Social Media and Motion",
+   "client": "Siena",
+   "description": "An ongoing mix of work for Siena, built to stand out in a crowded feed.\n\nBold green and gold social campaigns that lead with proof points, animated social pieces, plus a logo for The Stack Center for Innovation and Ethical Entrepreneurship and a campus banner.",
    "services": [
-    "Brand Identity Update"
+    "Social Media",
+    "Motion Graphics",
+    "Logo Design",
+    "Environmental Graphics"
    ],
    "images": [
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746485/1_afgcuj.png",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746481/2_uusram.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746494/3_eha3yn.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746482/4_ci7kll.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746491/5_xjdh6v.png",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746487/6_zsoj4p.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746493/7_utcl92.png",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746485/8_ukru82.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746489/9_fqcije.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746480/10_fraqua.png"
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1792946894/1-80_mwkbnc.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1792946885/2-80_fqvync.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1792946873/3-80_tloqpj.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1792946878/4-80_k23wo9.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1792946881/5-80_oadotk.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1792946870/6-80_vzoexh.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1792946889/7-80_wctauo.jpg"
    ],
-   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772746481/2_uusram.jpg",
-   "summary": "Rethink and Resolve: a prescriber campaign built on resistance data.",
-   "discipline": "Campaign"
+   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1792946873/3-80_tloqpj.jpg",
+   "videos": [
+    "https://res.cloudinary.com/dnf3dn2wb/video/upload/v1792947128/Siena-Social-Master_ljvcno.mp4",
+    "https://res.cloudinary.com/dnf3dn2wb/video/upload/v1792947360/SIEN_SOBGradCerts_1080x1080_br3s2n.mp4"
+   ],
+   "summary": "Social campaigns, motion, a logo and a banner for Siena.",
+   "discipline": "Social"
   },
   {
    "slug": "finishline",
