@@ -44,6 +44,9 @@ a{color:inherit}
 .menu-open .burger i:before,.menu-open .burger i:after{background:var(--bg)}
 #menu{position:fixed;inset:0;z-index:35;background:var(--ink);color:var(--bg);display:flex;flex-direction:column;justify-content:flex-start;padding:calc(env(safe-area-inset-top,0px) + 96px) var(--gutR) 40px var(--gut);overflow:auto;clip-path:circle(0% at calc(100% - 40px) 40px);transition:clip-path .9s cubic-bezier(.7,0,.2,1);visibility:hidden}
 .menu-open #menu{clip-path:circle(150% at calc(100% - 40px) 40px);visibility:visible}
+#menu .menu-sub{display:flex;gap:26px;margin-top:clamp(18px,3vh,34px);padding-left:2px}
+#menu .menu-sub a{color:#9AA09C;text-decoration:none;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+#menu .menu-sub a:hover{color:#4B5CFF}
 #menu ol{list-style:none;margin:0;padding:0;display:grid;gap:clamp(2px,.6vw,8px)}
 #menu li{overflow:hidden}
 #menu a{display:flex;align-items:baseline;gap:20px;text-decoration:none;transform:translateY(110%);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
