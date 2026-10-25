@@ -38,7 +38,7 @@ var WL = [
   {x:-0.24,y:0.03,w:"clamp(230px,25vw,460px)",ar:"3/2",ax:0.04,ay:-0.3},
   {x:0.23,y:0.0,w:"clamp(230px,25vw,460px)",ar:"3/2",ax:-0.12,ay:0.36}
 ];
-var order = ["king-brothers-dairy","alliance-180","dlg","siena","saint","finishline"];
+var order = ["siena","king-brothers-dairy","dlg","alliance-180","finishline","saint"];
 var P = order.map(function(s){return JB.projects.filter(function(p){return p.slug===s})[0]});
 $("#work-stops").outerHTML = P.map(function(p,i){
   var L = WL[i], side = L.x<0?1:-1;

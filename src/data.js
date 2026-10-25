@@ -174,10 +174,10 @@ export const JB = {
   },
   {
    "slug": "siena",
-   "title": "Siena",
+   "title": "Siena University",
    "category": "Social Media and Motion",
-   "client": "Siena",
-   "description": "An ongoing mix of work for Siena, built to stand out in a crowded feed.\n\nBold green and gold social campaigns that lead with proof points, animated social pieces, plus a logo for The Stack Center for Innovation and Ethical Entrepreneurship and a campus banner.",
+   "client": "Siena University",
+   "description": "An ongoing mix of work for Siena University, built to stand out in a crowded feed.\n\nBold green and gold social campaigns that lead with proof points, animated social pieces, plus a logo for The Stack Center for Innovation and Ethical Entrepreneurship and a campus banner.",
    "services": [
     "Social Media",
     "Motion Graphics",
@@ -193,12 +193,18 @@ export const JB = {
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1792946870/6-80_vzoexh.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1792946889/7-80_wctauo.jpg"
    ],
-   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1792946873/3-80_tloqpj.jpg",
+   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1792946894/1-80_mwkbnc.jpg",
    "videos": [
-    {"src": "https://res.cloudinary.com/dnf3dn2wb/video/upload/v1792947128/Siena-Social-Master_ljvcno.mp4", "after": 4},
-    {"src": "https://res.cloudinary.com/dnf3dn2wb/video/upload/v1792947360/SIEN_SOBGradCerts_1080x1080_br3s2n.mp4", "after": 5}
+    {
+     "src": "https://res.cloudinary.com/dnf3dn2wb/video/upload/v1792947128/Siena-Social-Master_ljvcno.mp4",
+     "after": 4
+    },
+    {
+     "src": "https://res.cloudinary.com/dnf3dn2wb/video/upload/v1792947360/SIEN_SOBGradCerts_1080x1080_br3s2n.mp4",
+     "after": 5
+    }
    ],
-   "summary": "Social campaigns, motion, a logo and a banner for Siena.",
+   "summary": "Social campaigns, motion, a logo and a banner for Siena University.",
    "discipline": "Social"
   },
   {
