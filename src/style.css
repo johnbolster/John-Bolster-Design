@@ -109,6 +109,8 @@ a{color:inherit}
 .ab-fig.pose img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transform:none;display:none}
 .ab-fig.pose img.on{display:block}
 @media (max-width:760px){.ab-fig.pose{height:40vh}}
+@media (max-width:760px) and (max-height:780px){.ab-fig.pose{height:35vh}}
+@media (max-width:400px){.h-name{font-size:21vw}}
 .ab-fig img{width:100%;height:100%;object-fit:cover;object-position:38% 50%;transform:scale(calc(1 + var(--k,0) * .35))}
 .ab-txt{display:grid;gap:18px;width:min(400px,84vw)}
 .ab-big{font-size:clamp(44px,5.4vw,104px);white-space:normal}
@@ -332,7 +334,7 @@ a{color:inherit}
 @media (max-width:760px){
   .dk-side{grid-template-columns:1fr}
   .dk-in{grid-template-columns:1fr;gap:18px}
-  .is3d #distinkt .panel{padding:72px var(--gutR) 54px var(--gut)}
+  .is3d #distinkt .panel{padding:72px calc(var(--gutR) + 14px) 54px var(--gut)}
   .dk-copy{gap:12px}
   .dk-top{gap:10px}
   .dk-logo{width:118px}
