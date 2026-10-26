@@ -240,10 +240,10 @@ export const JB = {
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772818228/4_lzrxip.jpg"
    ],
    "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772818230/1_ajppmc.jpg",
-   "summary": "A recruitment brand book for 700+ stores, built on energy and momentum.",
+   "summary": "A recruitment brand storybook for 700+ stores, built on energy and momentum.",
    "discipline": "Art Direction",
-   "seoTitle": "Finish Line · Recruitment Brand Book and Art Direction",
-   "seoDescription": "Creative direction and a recruitment brand book for Finish Line, built to attract a new generation of talent across 700+ stores."
+   "seoTitle": "Finish Line · Recruitment Brand Storybook and Art Direction",
+   "seoDescription": "Creative direction and a recruitment brand storybook for Finish Line, built to attract a new generation of talent across 700+ stores."
   }
  ]
 };
