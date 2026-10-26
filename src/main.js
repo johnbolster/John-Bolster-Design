@@ -99,7 +99,7 @@ if(tdn) tdn.addEventListener("click",function(){
   var v=$("#dkvid"), fig=$("#dkfig"); if(!v) return;
   var pp=$("#dkpp"), big=$("#dkbig"), seek=$("#dkseek"), tm=$("#dktime"), snd=$("#dksnd");
   function fmt(t){ t=Math.max(0,Math.floor(t||0)); return Math.floor(t/60)+":"+String(t%60).padStart(2,"0") }
-  function toggle(){ if(v.paused){ var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){}) } else v.pause() }
+  function toggle(){ if(v.paused){ if(v.preload!=="auto") v.preload="auto"; var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){}) } else v.pause() }
   big.addEventListener("click",toggle); pp.addEventListener("click",toggle); v.addEventListener("click",toggle);
   v.addEventListener("play",function(){ fig.classList.add("playing"); pp.setAttribute("aria-label","Pause") });
   v.addEventListener("pause",function(){ fig.classList.remove("playing"); pp.setAttribute("aria-label","Play") });
