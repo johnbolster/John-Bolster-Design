@@ -226,7 +226,7 @@ export const JB = {
    "category": "Art Direction / Design",
    "year": "2016",
    "client": "Finish Line",
-   "description": "Finish Line needed to attract a new generation of talent across 700+ stores, candidates in their twenties looking for purpose, growth and belonging.\n\nWe created a recruitment brand book built on energy and momentum, with layered type, dynamic composition and bold color drawn from sport. The message: opportunity over role, built for real use in stores and at job fairs.",
+   "description": "Finish Line needed to attract a new generation of talent across 700+ stores, candidates in their twenties looking for purpose, growth and belonging.\n\nWe created a recruitment brand storybook built on energy and momentum, with layered type, dynamic composition and bold color drawn from sport. The message: opportunity over role, built for real use in stores and at job fairs.",
    "services": [
     "Creative Direction",
     "Art Direction"
