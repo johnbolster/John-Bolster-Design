@@ -46,7 +46,7 @@ $("#work-stops").outerHTML = P.map(function(p,i){
   var L = WL[i], side = L.x<0?1:-1;
   return '<section class="st" data-label="Work" data-gap="'+(i?1.55:2.2)+'" data-hold=".38" data-ease=".5" data-a="'+L.ax+','+L.ay+'" data-ma="'+(0.43*side)+',0.36">'+
     '<div class="el" data-p="'+L.x+','+L.y+'" data-mp="0,-0.02" data-z="0" data-f="'+(L.x<0?-.25:.25)+',0" data-r="'+(L.x<0?18:-18)+'">'+
-      '<button class="card '+(L.x<0?"l":"r")+'" data-proj="'+i+'" style="width:'+L.w+'"><span class="fig" style="--ar:'+L.ar+'"><img src="'+cld(p.cover,1200)+'" srcset="'+srcset(p.cover)+'" sizes="(max-width:760px) 80vw, 36vw" alt="'+p.title+' project" loading="lazy" decoding="async"></span>'+
+      '<button class="card '+(L.x<0?"l":"r")+(p.coverAr?" full":"")+'" data-proj="'+i+'" style="width:'+L.w+'"><span class="fig" style="--ar:'+(p.coverAr||L.ar)+'"><img src="'+cld(p.cover,1200)+'" srcset="'+srcset(p.cover)+'" sizes="(max-width:760px) 80vw, 36vw" alt="'+p.title+' project" loading="lazy" decoding="async"></span>'+
       '<span class="meta"><span class="mono">'+String(i+1).padStart(2,"0")+' / 06</span></span>'+
       '<span class="d '+(i%2?'t2':'b7')+'">'+p.title+'</span><span class="meta"><span class="small">'+p.category+'</span><span class="mono open">View</span></span></button>'+
     '</div></section>';

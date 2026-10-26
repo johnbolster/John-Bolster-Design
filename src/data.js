@@ -177,7 +177,8 @@ export const JB = {
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744375/7-50_kro8ad.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772819120/6-50_hpkibp.jpg"
    ],
-   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744381/10-50_oip0yk.jpg",
+   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/e_trim:10/v1772744381/10-50_oip0yk.jpg",
+   "coverAr": "1924/996",
    "summary": "A science-forward identity for a breakthrough in treatment-resistant depression.",
    "discipline": "Identity",
    "seoTitle": "SAINT · Healthcare Brand Identity Design",
