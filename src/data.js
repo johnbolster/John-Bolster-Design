@@ -236,7 +236,7 @@ export const JB = {
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772818232/3_lxi3wv.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772818227/5_yscwdj.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772818237/7_tkykmr.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772818238/8_axyh1a.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1793019860/6_durbwt.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772818228/4_lzrxip.jpg"
    ],
    "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772818230/1_ajppmc.jpg",
