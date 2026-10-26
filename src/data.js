@@ -240,7 +240,7 @@ export const JB = {
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1793019860/6_durbwt.jpg",
     "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772818228/4_lzrxip.jpg"
    ],
-   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772818230/1_ajppmc.jpg",
+   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1793021185/FL_hbcweb.png",
    "summary": "A recruitment brand storybook for 700+ stores, built on energy and momentum.",
    "discipline": "Art Direction",
    "seoTitle": "Finish Line · Recruitment Brand Storybook and Art Direction",
