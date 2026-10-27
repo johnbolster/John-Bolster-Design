@@ -1,4 +1,8 @@
 {
+  "redirects": [
+    { "source": "/projects/saint", "destination": "/", "permanent": true },
+    { "source": "/projects/saint/", "destination": "/", "permanent": true }
+  ],
   "rewrites": [
     {
       "source": "/projects/:slug",

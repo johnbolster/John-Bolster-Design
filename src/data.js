@@ -155,34 +155,32 @@ export const JB = {
    "seoDescription": "A bold black and white rebrand and a hardcover brand manifesto for national litigation firm DLG, designed by John Bolster."
   },
   {
-   "slug": "saint",
-   "title": "SAINT",
-   "category": "Brand Design",
-   "year": "2020",
-   "client": "SAINT",
-   "description": "Treatment resistant depression leaves patients cycling through options that fail. SAINT was built to change that, but its identity didn't reflect the breakthrough.\n\nWe repositioned the brand around clarity, credibility and hope. Structured layouts and data driven visuals meet fluid, wave like imagery, speaking to clinicians with evidence and to patients with reassurance, including remission in as little as 2.6 days.",
+   "slug": "auryon",
+   "title": "Auryon",
+   "category": "Brand Strategy and Guidelines",
+   "client": "AngioDynamics",
+   "description": "Auryon, AngioDynamics' laser system for treating peripheral artery disease, already had a strong look and feel. What it needed was the strategy behind it, and a system to keep it consistent as it grew.\n\nWe worked backwards from the existing identity to define who the brand serves, from vascular surgeons to interventional cardiologists and radiologists, along with its Hero and Explorer archetypes and a voice that is confident but not cocky. Then we built it out into complete guidelines covering logo, typography, color, imagery, icons and data, giving employees and agency partners one clear way to bring the brand to life.",
    "services": [
-    "Brand Identity"
+    "Brand Strategy",
+    "Brand Guidelines"
    ],
    "images": [
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744368/1-50_g3xpzk.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744369/2-50_siij15.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744378/3-50_icjqbq.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744371/4-50_zhlc4w.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744372/5-50_nws8sr.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744380/11-50_rv66vh.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744382/8-50_mehiuo.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744374/9-50_ug7lu5.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744381/10-50_oip0yk.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772744375/7-50_kro8ad.jpg",
-    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1772819120/6-50_hpkibp.jpg"
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1793115680/Artboard_1-80_nqpz0q.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1793115671/Artboard_1_copy-80_q0vzag.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1793115610/Artboard_1_copy_3-80_okwbb8.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1793115619/Artboard_1_copy_4-80_icglzs.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1793115628/Artboard_1_copy_5-80_q7dz6f.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1793115637/Artboard_1_copy_6-80_qcndx2.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1793115645/Artboard_1_copy_7-80_xai0ya.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1793116232/Auryon_Brand_Guidelines_nnix7q.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1793115663/Artboard_1_copy_9-80_rer8lb.jpg",
+    "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1793115654/Artboard_1_copy_8-80_j5fpyp.jpg"
    ],
-   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/e_trim:10/v1772744381/10-50_oip0yk.jpg",
-   "coverAr": "1924/996",
-   "summary": "A science-forward identity for a breakthrough in treatment-resistant depression.",
-   "discipline": "Identity",
-   "seoTitle": "SAINT · Healthcare Brand Identity Design",
-   "seoDescription": "A science forward healthcare brand identity for SAINT, a breakthrough treatment for treatment resistant depression."
+   "cover": "https://res.cloudinary.com/dnf3dn2wb/image/upload/v1793116232/Auryon_Brand_Guidelines_nnix7q.jpg",
+   "summary": "Turning an existing look into a complete brand strategy and system.",
+   "discipline": "Strategy",
+   "seoTitle": "Auryon · Medical Device Brand Strategy and Brand Guidelines",
+   "seoDescription": "Brand strategy and complete brand style guidelines for Auryon, AngioDynamics' laser system for peripheral artery disease, designed by John Bolster."
   },
   {
    "slug": "siena",
