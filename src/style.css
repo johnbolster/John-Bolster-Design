@@ -229,10 +229,10 @@ a{color:inherit}
 
 .card .d+.small{margin-top:-6px}
 .card .open{justify-self:start;display:inline-flex;gap:12px;align-items:center;margin-top:6px;color:var(--ink);transition:color .3s}
-.card .open i{position:relative;display:block;width:32px;height:1.5px;background:var(--line);transform-origin:left center;animation:cardcue 3.6s cubic-bezier(.6,0,.2,1) infinite}
+.card .open i{position:relative;display:block;width:20px;height:1.5px;background:var(--line);transform-origin:left center;animation:cardcue 3.6s cubic-bezier(.6,0,.2,1) infinite}
 .card .open i:after{content:"";position:absolute;right:-1px;top:50%;width:7px;height:7px;border-top:1.5px solid var(--line);border-right:1.5px solid var(--line);transform:translateY(-50%) rotate(45deg)}
 .card:hover .open,.card:focus-visible .open{color:var(--line)}
-.card:hover .open i,.card:focus-visible .open i{animation:none;width:52px;transition:width .4s cubic-bezier(.2,.8,.2,1)}
+.card:hover .open i,.card:focus-visible .open i{animation:none;width:34px;transition:width .4s cubic-bezier(.2,.8,.2,1)}
 @keyframes cardcue{0%,55%,100%{transform:translateX(0)}70%{transform:translateX(8px)}85%{transform:translateX(0)}}
 @media (prefers-reduced-motion:reduce){.card .open i{animation:none}}
 
