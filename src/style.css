@@ -97,8 +97,14 @@ a{color:inherit}
 .h-name .w:first-child{transform:translate3d(calc(var(--sp,0) * -10vw),0,0)}
 .h-name .w:last-child{transform:translate3d(calc(var(--sp,0) * 10vw),0,0)}
 .h-cap{display:grid;gap:10px;width:min(330px,80vw)}
-.h-cue{display:flex;gap:10px;align-items:center}
-.h-cue i{width:1px;height:36px;background:var(--ink);display:block;transform-origin:top;animation:cue 2.2s cubic-bezier(.7,0,.2,1) infinite}
+.h-cue{display:flex;gap:12px;align-items:center;background:none;border:0;padding:8px 0;cursor:pointer;color:var(--ink);font:inherit}
+.h-cue .mono{color:var(--ink);font-size:12px;transition:color .3s}
+.h-cue i{width:1.5px;height:56px;background:var(--line);display:block;transform-origin:top;animation:cue 2.2s cubic-bezier(.7,0,.2,1) infinite}
+.h-cue:hover .mono,.h-cue:focus-visible .mono,.h-cue.nudge .mono{color:var(--line)}
+.h-cue.nudge{animation:cuepulse 1.2s ease-in-out 2}
+@keyframes cuepulse{50%{transform:translateY(6px)}}
+@media (max-width:760px){.h-cue .cue-x{display:none}}
+@media (prefers-reduced-motion:reduce){.h-cue i,.h-cue.nudge{animation:none}}
 @keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}50.1%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 .intro .c{animation:rise 1.3s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(.15s + var(--i) * .055s)}
 @keyframes rise{from{transform:translate3d(0,105%,0);opacity:0}}

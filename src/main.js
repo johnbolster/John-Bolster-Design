@@ -561,6 +561,15 @@ var rt; addEventListener("resize",function(){
   if(coarse && innerWidth===lastLayoutW) return;
   clearTimeout(rt); rt=setTimeout(function(){ layout(); dirty=true },150) });
 layout(); scrollTo(0,0); requestAnimationFrame(frame);
+// first-time visitors sometimes miss that the page scrolls: if nothing happens for a few
+// seconds, highlight the cue and give the camera one small forward peek, then settle back
+(function(){ var cue=$(".h-cue"), done=false, stop=function(){ done=true };
+  ["wheel","touchstart","keydown","pointerdown"].forEach(function(ev){ addEventListener(ev,stop,{once:true,passive:true}) });
+  setTimeout(function(){ if(done||scrollY>2||cur>=0) return;
+    if(cue) cue.classList.add("nudge");
+    var peek=Math.round(innerHeight*0.14); scrollTo(0,peek);
+    setTimeout(function(){ if(!done&&Math.abs(scrollY-peek)<2) scrollTo(0,0) },650);
+  },4500) })();
 // deep links from the old site, like /projects/dlg, open that project
 (function(){ var m=location.pathname.match(/^\/projects\/([^\/]+)/); if(!m) return;
   var di=-1; P.forEach(function(p,k){ if(p.slug===m[1]) di=k });
